@@ -1,35 +1,14 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
-<head>
-  <title>Web App Example</title>
-</head>
-<body>
+ <head>
   <script src="https://telegram.org/js/telegram-web-app.js"></script>
-  <script>
-    var WebApp = window.Telegram.WebApp;
-
-    WebApp.showAlert(`Добро пожаловать, @${WebApp.WebAppUser.username}.`);
-    var MainButton = WebApp.MainButton;
-    var BackButton = WebApp.BackButton;
-
-    MainButton.show();
-    BackButton.show();
-
-    MainButton.onClick(function() {
-      WebApp.showAlert("Хорошо, ты нажал на главную кнопку.");
-    });
-    WebApp.onEvent('mainButtonClicked', function() {
-      /* also */
-    });
-
-    BackButton.onClick(function() {
-      WebApp.showAlert("Нет пути назад!");
-
-      BackButton.hide();
-    });
-    WebApp.onEvent('backButtonClicked', function() {
-      /* also */
-    });
-  </script>
-</body>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Пример веб-страницы</title>
+ </head>
+ <body>
+  <h1>Заголовок</h1>
+  <!-- Комментарий -->
+  <p>Первый абзац.</p>
+  <p>Второй абзац.</p>
+ </body>
 </html>
