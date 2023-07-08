@@ -8,27 +8,28 @@
   <title>Пример веб-страницы</title>
  </head>
 
-  <body>
-    <form id="form">
-      <select id="route">
-        <option value="">Выберите отдел</option>
-        <option value="ТП">ТП</option>
-        <option value="АХО">АХО</option>
-      </select>
-      <select id="kat_tp" style="display: none;">
-        <option value="">Выберите категорию ТП</option>
-        <option value="1С">1С</option>
-        <option value="Программное обеспечение">Программное обеспечение</option>
-        <option value="Оборудование">Оборудование</option>
-      </select>
-      <select id="kat_aho" style="display: none;">
-        <option value="">Выберите категорию АХО</option>
-        <option value="Охрана">Охрана</option>
-        <option value="Входная группа">Входная группа</option>
-        <option value="Торговое оборудование">Торговое оборудование</option>
-        <option value="Прочее">Прочее</option>
-      </select>
-    </form>
+ <body>
+  <form id="form">
+    <select id="route" onchange="showCategory()">
+      <option value="">Выберите отдел</option>
+      <option value="ТП">ТП</option>
+      <option value="АХО">АХО</option>
+    </select>
+    <select id="kat_tp" style="display: none;">
+      <option value="">Выберите категорию ТП</option>
+      <option value="1С">1С</option>
+      <option value="Программное обеспечение">Программное обеспечение</option>
+      <option value="Оборудование">Оборудование</option>
+    </select>
+    <select id="kat_aho" style="display: none;">
+      <option value="">Выберите категорию АХО</option>
+      <option value="Охрана">Охрана</option>
+      <option value="Входная группа">Входная группа</option>
+      <option value="Торговое оборудование">Торговое оборудование</option>
+      <option value="Прочее">Прочее</option>
+    </select>
+    <div id="error"></div>
+  </form>
     <!-- <div id="usercard"></div>  -->
     <!-- <form id="form">
       <input type="text" placeholder="В какой отдел ставите задачу?" id="route">
@@ -47,14 +48,29 @@
       const katTpSelect = document.getElementById('kat_tp');
       let close = button.getElementById('btn')
       tg.expand();
-      routeSelect.addEventListener('change', function() {
-        if (routeSelect.value !== '') {
-          katTpSelect.style.display = 'block';
-        } else {
-          katTpSelect.style.display = 'none';
-          katTpSelect.value = ''; // Очистка значения поля kat_tp
-        }});
+      function showCategory() {
+      var route = document.getElementById("route").value;
+      var kat_tp = document.getElementById("kat_tp");
+      var kat_aho = document.getElementById("kat_aho");
+
+      // Скрыть все категории
+      kat_tp.style.display = "none";
+      kat_aho.style.display = "none";
+
+      if (route === "ТП") {
+        kat_tp.style.display = "block";
+      } else if (route === "АХО") {
+        kat_aho.style.display = "block";
+      }
+    }
       btn.addEventListener('click', () => {
+        let route = document.getElementById("route").value;
+        let kat_tp = document.getElementById("kat_tp").value;
+        let kat_aho = document.getElementById("kat_aho").value;
+        if(route.lenght < 1) {
+          document.getElementById("error").innerText= 'Ошибка в маршруте';
+          return;
+        }
         tg.close();
       }); 
     </script>
