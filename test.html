@@ -11,7 +11,6 @@
       width: 300px; /* Установите нужную ширину */
       height: 40px; /* Установите нужную высоту */
       font-size: 16px; /* Установите нужный размер шрифта */
-      transition: opacity 3s ease-in-out; /* Анимация при изменении прозрачности */
     }
     button  {
       width: 300px; /* Установите нужную ширину */
@@ -80,22 +79,55 @@
         tg.sendData(JSON.stringify(data));
         tg.close();
       });
+
+      function fadeIn(element) {
+    var op = 0.1; // начальная прозрачность
+    element.style.opacity = op;
+    element.style.display = "block";
+
+    var timer = setInterval(function () {
+      if (op >= 1) {
+        clearInterval(timer);
+      }
+      element.style.opacity = op;
+      op += op * 0.1;
+    }, 10);
+  }
+
+  function fadeOut(element) {
+    var op = 1; // начальная прозрачность
+
+    var timer = setInterval(function () {
+      if (op <= 0.1) {
+        clearInterval(timer);
+        element.style.display = "none";
+      }
+      element.style.opacity = op;
+      op -= op * 0.1;
+    }, 10);
+  }
       function showCategory() {
-      var route = document.getElementById("route").value;
-      var kat_tp = document.getElementById("kat_tp");
-      var kat_aho = document.getElementById("kat_aho");
+        var routeSelect = document.getElementById("route");
+    var tpSelect = document.getElementById("kat_tp");
+    var ahoSelect = document.getElementById("kat_aho");
 
-      // Скрыть все категории
-      kat_tp.style.display = "none";
-      kat_tp.value = "";
-      kat_aho.style.display = "none";
-      kat_aho.value = "";
-
-      if (route === "ТП") {
-        kat_tp.style.display = "block";
-      } else if (route === "АХО") {
-        kat_aho.style.display = "block";
-      }}
+    if (routeSelect.value === "ТП") {
+      tpSelect.style.display = "block";
+      ahoSelect.style.display = "none";
+      fadeIn(tpSelect);
+      fadeOut(ahoSelect);
+    } else if (routeSelect.value === "АХО") {
+      tpSelect.style.display = "none";
+      ahoSelect.style.display = "block";
+      fadeIn(ahoSelect);
+      fadeOut(tpSelect);
+    } else {
+      tpSelect.style.display = "none";
+      ahoSelect.style.display = "none";
+      fadeOut(tpSelect);
+      fadeOut(ahoSelect);
+    }
+  }
     </script>
     <!-- <script>let tg = window.Telegram.WebApp; //получаем объект webapp телеграма 
         let usercard = document.getElementById("usercard"); //получаем блок usercard 
