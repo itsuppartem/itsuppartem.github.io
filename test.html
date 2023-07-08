@@ -5,6 +5,25 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
  </head>
  <body>
+  <style>
+    /* Стили для элементов select */
+    select {
+      width: 300px; /* Установите нужную ширину */
+      height: 40px; /* Установите нужную высоту */
+      font-size: 16px; /* Установите нужный размер шрифта */
+      transition: opacity 0.5s ease-in-out; /* Анимация при изменении прозрачности */
+    }
+  
+    /* Стили для скрытых элементов select */
+    select[style="display: none;"] {
+      opacity: 0; /* Установите нулевую прозрачность */
+    }
+  
+    /* Стили для видимых элементов select */
+    select[style="display: block;"] {
+      opacity: 1; /* Установите полную прозрачность */
+    }
+  </style>
   <form id="form">
     <select id="route" onchange="showCategory()">
       <option value="">Выберите отдел</option>
