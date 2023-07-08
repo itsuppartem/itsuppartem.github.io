@@ -3,11 +3,7 @@
  <head>
   <script src="https://telegram.org/js/telegram-web-app.js"></script>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <style></style>
-  
-  <title>Пример веб-страницы</title>
  </head>
-
  <body>
   <form id="form">
     <select id="route" onchange="showCategory()">
@@ -31,38 +27,15 @@
     <div id="error"></div>
     <button id="btn">Поставить задачу</button> 
   </form>
-    <!-- <div id="usercard"></div>  -->
-    <!-- <form id="form">
-      <input type="text" placeholder="В какой отдел ставите задачу?" id="route">
-      <input type="text" placeholder="Категория проблемы ТП?" id="kat_tp" style="display: none;"> -->
-      <!-- <input type="text" placeholder="Категория проблемы АХО?" id="kat_aho">
-      <input type="text" placeholder="Категория проблемы 1с?" id="kat_1c">
-      <input type="text" placeholder="Действие в 1с?" id="do_1c">
-      <input type="text" placeholder="Вид документы для изменения\ошибки?" id="vid_iz">
-      <input type="text" placeholder="Вид документы для создания?" id="vid_cre">
-      <input type="text" placeholder="Приоритет?" id="route"> -->
-    <!-- </form> -->
-    <!--Кнопка, чтобы скрыть / показать основную кнопку-->
     <script>
+
       let tg = window.Telegram.WebApp;
+      tg.expand();
       const routeSelect = document.getElementById('route');
       const katTpSelect = document.getElementById('kat_tp');
       let close1 = document.getElementById('btn')
-      tg.expand();
-      function showCategory() {
-      var route = document.getElementById("route").value;
-      var kat_tp = document.getElementById("kat_tp");
-      var kat_aho = document.getElementById("kat_aho");
+      
 
-      // Скрыть все категории
-      kat_tp.style.display = "none";
-      kat_aho.style.display = "none";
-
-      if (route === "ТП") {
-        kat_tp.style.display = "block";
-      } else if (route === "АХО") {
-        kat_aho.style.display = "block";
-      }}
       close1.addEventListener('click', () => {
         let route = document.getElementById("route").value;
         let kat_tp = document.getElementById("kat_tp").value;
@@ -79,6 +52,20 @@
         tg.sendData(JSON.stringify(data));
         tg.close();
       }); 
+      function showCategory() {
+      var route = document.getElementById("route").value;
+      var kat_tp = document.getElementById("kat_tp");
+      var kat_aho = document.getElementById("kat_aho");
+
+      // Скрыть все категории
+      kat_tp.style.display = "none";
+      kat_aho.style.display = "none";
+
+      if (route === "ТП") {
+        kat_tp.style.display = "block";
+      } else if (route === "АХО") {
+        kat_aho.style.display = "block";
+      }}
     </script>
     <!-- <script>let tg = window.Telegram.WebApp; //получаем объект webapp телеграма 
         let usercard = document.getElementById("usercard"); //получаем блок usercard 
