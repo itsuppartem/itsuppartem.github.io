@@ -40,18 +40,22 @@
         let route = document.getElementById("route").value;
         let kat_tp = document.getElementById("kat_tp").value;
         let kat_aho = document.getElementById("kat_aho").value;
-        if(route.lenght < 1) {
-          document.getElementById("error").innerText= 'Ошибка в маршруте';
-          return;
-        }
+
         let data = {
-          route:route,
-          kat_tp:kat_tp,
-          kat_aho: kat_aho
+          route: route
+        };
+
+        if (kat_tp !== "") {
+          data.kat_tp = kat_tp;
         }
+
+        if (kat_aho !== "") {
+          data.kat_aho = kat_aho;
+        }
+
         tg.sendData(JSON.stringify(data));
         tg.close();
-      }); 
+      });
       function showCategory() {
       var route = document.getElementById("route").value;
       var kat_tp = document.getElementById("kat_tp");
