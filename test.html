@@ -29,7 +29,7 @@
       <option value="Прочее">Прочее</option>
     </select>
     <div id="error"></div>
-    <button id="btn" class="button">Поставить задачу</button> 
+    <button id="btn">Поставить задачу</button> 
   </form>
     <!-- <div id="usercard"></div>  -->
     <!-- <form id="form">
@@ -47,7 +47,7 @@
       let tg = window.Telegram.WebApp;
       const routeSelect = document.getElementById('route');
       const katTpSelect = document.getElementById('kat_tp');
-      let close1 = button.getElementById('btn')
+      let close1 = document.getElementById('btn')
       tg.expand();
       function showCategory() {
       var route = document.getElementById("route").value;
