@@ -23,9 +23,10 @@
       </select>
       <select id="kat_aho" style="display: none;">
         <option value="">Выберите категорию АХО</option>
-        <option value="Категория 1">Категория 1</option>
-        <option value="Категория 2">Категория 2</option>
-        <option value="Категория 3">Категория 3</option>
+        <option value="Охрана">Охрана</option>
+        <option value="Входная группа">Входная группа</option>
+        <option value="Торговое оборудование">Торговое оборудование</option>
+        <option value="Прочее">Прочее</option>
       </select>
     </form>
     <!-- <div id="usercard"></div>  -->
@@ -41,17 +42,20 @@
     <!-- </form> -->
     <button id="btn" class="button">Поставить задачу</button> <!--Кнопка, чтобы скрыть / показать основную кнопку-->
     <script>
+      let tg = window.Telegram.WebApp;
       const routeSelect = document.getElementById('route');
       const katTpSelect = document.getElementById('kat_tp');
-    
+      let close = button.getElementById('btn')
       routeSelect.addEventListener('change', function() {
         if (routeSelect.value !== '') {
           katTpSelect.style.display = 'block';
         } else {
           katTpSelect.style.display = 'none';
           katTpSelect.value = ''; // Очистка значения поля kat_tp
-        }
-      });
+        }});
+      btn.addEventListener('click', () => {
+        tg.close();
+      }); 
     </script>
     <!-- <script>let tg = window.Telegram.WebApp; //получаем объект webapp телеграма 
         let usercard = document.getElementById("usercard"); //получаем блок usercard 
