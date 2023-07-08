@@ -9,32 +9,46 @@
  </head>
 
   <body>
-    <div id="usercard"> <!--Карта профиля, человека, который к нам обратился-->
-    </div>
     <form id="form">
+      <select id="route">
+        <option value="">Выберите отдел</option>
+        <option value="Отдел 1">Отдел 1</option>
+        <option value="Отдел 2">Отдел 2</option>
+        <option value="Отдел 3">Отдел 3</option>
+      </select>
+      <select id="kat_tp" style="display: none;">
+        <option value="">Выберите категорию</option>
+        <option value="Категория 1">Категория 1</option>
+        <option value="Категория 2">Категория 2</option>
+        <option value="Категория 3">Категория 3</option>
+      </select>
+    </form>
+    <!-- <div id="usercard"></div>  -->
+    <!-- <form id="form">
       <input type="text" placeholder="В какой отдел ставите задачу?" id="route">
-      <input type="text" placeholder="Категория проблемы ТП?" id="kat_tp" style="display: none;">
+      <input type="text" placeholder="Категория проблемы ТП?" id="kat_tp" style="display: none;"> -->
       <!-- <input type="text" placeholder="Категория проблемы АХО?" id="kat_aho">
       <input type="text" placeholder="Категория проблемы 1с?" id="kat_1c">
       <input type="text" placeholder="Действие в 1с?" id="do_1c">
       <input type="text" placeholder="Вид документы для изменения\ошибки?" id="vid_iz">
       <input type="text" placeholder="Вид документы для создания?" id="vid_cre">
       <input type="text" placeholder="Приоритет?" id="route"> -->
-    </form>
+    <!-- </form> -->
     <button id="btn" class="button">Поставить задачу</button> <!--Кнопка, чтобы скрыть / показать основную кнопку-->
     <script>
-      const routeInput = document.getElementById('route');
-      const katTpInput = document.getElementById('kat_tp');
+      const routeSelect = document.getElementById('route');
+      const katTpSelect = document.getElementById('kat_tp');
     
-      routeInput.addEventListener('input', function() {
-        if (routeInput.value !== '') {
-          katTpInput.style.display = 'block';
+      routeSelect.addEventListener('change', function() {
+        if (routeSelect.value !== '') {
+          katTpSelect.style.display = 'block';
         } else {
-          katTpInput.style.display = 'none';
+          katTpSelect.style.display = 'none';
+          katTpSelect.value = ''; // Очистка значения поля kat_tp
         }
       });
     </script>
-    <script>let tg = window.Telegram.WebApp; //получаем объект webapp телеграма 
+    <!-- <script>let tg = window.Telegram.WebApp; //получаем объект webapp телеграма 
         let usercard = document.getElementById("usercard"); //получаем блок usercard 
 
         let profName = document.createElement('p'); //создаем параграф
@@ -46,7 +60,7 @@
         
         let userid = document.createElement('p'); //создаем еще параграф 
         userid.innerText = `${tg.initDataUnsafe.user.id}`; //показываем user_id
-        usercard.appendChild(userid); //добавляем</script>
+        usercard.appendChild(userid); //добавляем</script> -->
 
 
 
