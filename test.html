@@ -71,6 +71,12 @@
           document.getElementById("error").innerText= 'Ошибка в маршруте';
           return;
         }
+        let data = {
+          route:route,
+          kat_tp:kat_tp,
+          kat_aho: kat_aho
+        }
+        tg.sendData(JSON.stringify(data));
         tg.close();
       }); 
     </script>
