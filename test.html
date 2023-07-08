@@ -47,7 +47,7 @@
       let tg = window.Telegram.WebApp;
       const routeSelect = document.getElementById('route');
       const katTpSelect = document.getElementById('kat_tp');
-      let close = button.getElementById('btn')
+      let close1 = button.getElementById('btn')
       tg.expand();
       function showCategory() {
       var route = document.getElementById("route").value;
@@ -62,9 +62,8 @@
         kat_tp.style.display = "block";
       } else if (route === "АХО") {
         kat_aho.style.display = "block";
-      }
-    }
-      btn.addEventListener('click', () => {
+      }}
+      close1.addEventListener('click', () => {
         let route = document.getElementById("route").value;
         let kat_tp = document.getElementById("kat_tp").value;
         let kat_aho = document.getElementById("kat_aho").value;
