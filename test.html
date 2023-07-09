@@ -39,6 +39,7 @@
       <option value="1С">1С</option>
       <option value="Программное обеспечение">Программное обеспечение</option>
       <option value="Оборудование">Оборудование</option>
+      <option value="Интернет">Интернет</option>
     </select>
     <select id="kat_aho" style="display: none;">
       <option value="">Выберите категорию АХО</option>
@@ -48,13 +49,43 @@
       <option value="Прочее">Прочее</option>
     </select>
     <select id="kat_1c" style="display: none;">
-      <option value="">Выберите категорию АХО</option>
-      <option value="Охрана">Охрана</option>
-      <option value="Входная группа">Входная группа</option>
-      <option value="Торговое оборудование">Торговое оборудование</option>
+      <option value="">Выберите категорию 1С</option>
+      <option value="Розница">Розница</option>
+      <option value="УТ">УТ</option>
       <option value="Прочее">Прочее</option>
     </select>
+    <select id="dei_1c" style="display: none;">
+      <option value="">Какого вида действие?</option>
+      <option value="Редактировать">Редактировать</option>
+      <option value="Указать на ошибку">Указать на ошибку</option>
+      <option value="Создать">Создать</option>
+      <option value="Прочее">Прочее</option>
+    </select>
+    <select id="vid_doka" style="display: none;">
+      <option value="">Вид документа?</option>
+      <option value="РКО">РКО</option>
+      <option value="Эквайринговая операция">Эквайринговая операция</option>
+      <option value="Обращение в сервис">Обращение в сервис</option>
+      <option value="ПКО">ПКО</option>
+      <option value="Перемещение">Перемещение</option>
+      <option value="Возврат покупателя">Возврат покупателя</option>
+      <option value="Заказ покупателя">Заказ покупателя</option>
+      <option value="Прочее">Прочее</option>
+    </select>
+    <select id="prioritet" style="display: none;">
+      <option value="">Вид документа?</option>
+      <option value="Улучшение работы">Улучшение работы</option>
+      <option value="Низкий">Низкий</option>
+      <option value="Средний">Средний</option>
+      <option value="Высокий">Высокий</option>
+      <option value="Критический">Критический</option>
+    </select>
     <div id="error"></div>
+    <input type="text" id="tema_z" placeholder="Тема задачи(кратко)"style="display: none;">
+    <input type="text" id="nomer" placeholder="Номер документа"style="display: none;">
+    <input type="text" id="po_name" placeholder="Название программы"style="display: none;">
+    <input type="text" id="rec_1c" placeholder="Опишите реквизиты документа"style="display: none;">
+    <input type="text" id="tema_zf" placeholder="Суть задачи(развернуто)"style="display: none;">
     <label for="photo">Выберите фотографию:</label>
     <input type="file" id="photo" name="photo">
     <button id="btn">Поставить задачу</button> 
@@ -115,28 +146,112 @@
       op -= op * 0.1;
     }, 10);
   }
-      function showCategory() {
-        var routeSelect = document.getElementById("route");
-    var tpSelect = document.getElementById("kat_tp");
-    var ahoSelect = document.getElementById("kat_aho");
+  //     function showCategory() {
+  //       var routeSelect = document.getElementById("route");
+  //   var tpSelect = document.getElementById("kat_tp");
+  //   var ahoSelect = document.getElementById("kat_aho");
 
-    if (routeSelect.value === "ТП") {
-      tpSelect.style.display = "block";
-      ahoSelect.style.display = "none";
-      fadeIn(tpSelect);
-      fadeOut(ahoSelect);
-    } else if (routeSelect.value === "АХО") {
-      tpSelect.style.display = "none";
-      ahoSelect.style.display = "block";
-      fadeIn(ahoSelect);
-      fadeOut(tpSelect);
-    } else {
-      tpSelect.style.display = "none";
-      ahoSelect.style.display = "none";
-      fadeOut(tpSelect);
-      fadeOut(ahoSelect);
-    }
+  //   if (routeSelect.value === "ТП") {
+  //     tpSelect.style.display = "block";
+  //     ahoSelect.style.display = "none";
+  //     fadeIn(tpSelect);
+  //     fadeOut(ahoSelect);
+  //   } else if (routeSelect.value === "АХО") {
+  //     tpSelect.style.display = "none";
+  //     ahoSelect.style.display = "block";
+  //     fadeIn(ahoSelect);
+  //     fadeOut(tpSelect);
+  //   } else {
+  //     tpSelect.style.display = "none";
+  //     ahoSelect.style.display = "none";
+  //     fadeOut(tpSelect);
+  //     fadeOut(ahoSelect);
+  //   }
+  // }
+
+  function showCategory() {
+  // Скрываем все элементы, кроме route
+  hideAllElements();
+  
+  // Отображаем kat_tp при выборе ТП
+  if (document.getElementById("route").value === "ТП") {
+    document.getElementById("kat_tp").style.display = "block";
   }
+  
+  // Отображаем kat_1c при выборе 1С
+  if (document.getElementById("route").value === "1С") {
+    document.getElementById("kat_1c").style.display = "block";
+  }
+  
+  // Отображаем dei_1c при выборе любого значения в kat_1c
+  if (document.getElementById("kat_1c").value !== "") {
+    document.getElementById("dei_1c").style.display = "block";
+  }
+  
+  // Отображаем nomer и tema_z при выборе Редактировать и указать на ошибку в dei_1c
+  if (document.getElementById("dei_1c").value === "Редактировать и указать на ошибку") {
+    document.getElementById("nomer").style.display = "block";
+    document.getElementById("tema_z").style.display = "block";
+    document.getElementById("tema_z").value = "редактировать документ";
+  }
+  
+  // Отображаем tema_zf и prioritet после tema_z
+  if (document.getElementById("tema_z").style.display === "block") {
+    document.getElementById("tema_zf").style.display = "block";
+    document.getElementById("prioritet").style.display = "block";
+  }
+  
+  // Отображаем rec_1c и prioritet после dei_1c выбора Создать
+  if (document.getElementById("dei_1c").value === "Создать") {
+    document.getElementById("rec_1c").style.display = "block";
+    document.getElementById("prioritet").style.display = "block";
+    document.getElementById("tema_z").value = "создать документ";
+  }
+  
+  // Отображаем po_name, tema_z и prioritet при выборе Программное обеспечение в kat_tp
+  if (document.getElementById("kat_tp").value === "Программное обеспечение") {
+    document.getElementById("po_name").style.display = "block";
+    document.getElementById("tema_z").style.display = "block";
+    document.getElementById("prioritet").style.display = "block";
+  }
+  
+  // Отображаем tema_zf и prioritet при выборе Интернет в kat_tp
+  if (document.getElementById("kat_tp").value === "Интернет") {
+    document.getElementById("tema_z").value = "Проблемы с интернетом";
+    document.getElementById("tema_zf").style.display = "block";
+    document.getElementById("prioritet").style.display = "block";
+  }
+  
+  // Отображаем kat_aho, tema_z, tema_zf и prioritet при выборе АХО в route
+  if (document.getElementById("route").value === "АХО") {
+    document.getElementById("kat_aho").style.display = "block";
+    document.getElementById("tema_z").style.display = "block";
+    document.getElementById("tema_zf").style.display = "block";
+    document.getElementById("prioritet").style.display = "block";
+  }
+}
+
+function hideAllElements() {
+  document.getElementById("kat_tp").style.display = "none";
+  document.getElementById("kat_aho").style.display = "none";
+  document.getElementById("kat_1c").style.display = "none";
+  document.getElementById("dei_1c").style.display = "none";
+  document.getElementById("vid_doka_redact").style.display = "none";
+  document.getElementById("vid_doka_sozdat").style.display = "none";
+  document.getElementById("prioritet").style.display = "none";
+  document.getElementById("tema_z").style.display = "none";
+  document.getElementById("nomer").style.display = "none";
+  document.getElementById("po_name").style.display = "none";
+  document.getElementById("rec_1c").style.display = "none";
+  document.getElementById("tema_zf").style.display = "none";
+  
+  // Сбрасываем значения полей
+  document.getElementById("tema_z").value = "";
+  document.getElementById("nomer").value = "";
+  document.getElementById("po_name").value = "";
+  document.getElementById("rec_1c").value = "";
+  document.getElementById("tema_zf").value = "";
+}
     </script>
     <!-- <script>let tg = window.Telegram.WebApp; //получаем объект webapp телеграма 
         let usercard = document.getElementById("usercard"); //получаем блок usercard 
