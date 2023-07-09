@@ -215,18 +215,18 @@ function showElement(element) {
     if (routeSelect.value === "ТП") {
       showElement(katTpElement)
       hideElement(katAhoElement)
-      fadeIn(tpSelect);
-      fadeOut(ahoSelect);
+      fadeIn(katTpElement);
+      fadeOut(katAhoElement);
     } else if (routeSelect.value === "АХО") {
       hideElement(katTpElement)
       showElement(katAhoElement)
-      fadeIn(ahoSelect);
-      fadeOut(tpSelect);
+      fadeIn(katAhoElement);
+      fadeOut(katTpElement);
     } else {
       hideElement(katTpElement)
       hideElement(katAhoElement)
-      fadeOut(tpSelect);
-      fadeOut(ahoSelect);
+      fadeOut(katAhoElement);
+      fadeOut(katTpElement);
     }
   }
 
