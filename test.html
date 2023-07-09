@@ -7,21 +7,12 @@
  <body>
   <style>
     /* Стили для элементов select */
-    select {
-      width: 300px; /* Установите нужную ширину */
-      height: 40px; /* Установите нужную высоту */
-      font-size: 16px; /* Установите нужный размер шрифта */
-    }
-    input {
-      width: 300px; /* Установите нужную ширину */
-      height: 40px; /* Установите нужную высоту */
-      font-size: 16px; /* Установите нужный размер шрифта */
-    }
-    button  {
-      width: 300px; /* Установите нужную ширину */
-      height: 40px; /* Установите нужную высоту */
-      font-size: 16px; /* Установите нужный размер шрифта */
-    }
+    select, input[type="text"], button {
+  width: 300px;
+  height: 40px;
+  font-size: 16px;
+  box-sizing: border-box; /* Учитывать границы и отступы внутри элемента */
+}
   
     /* Стили для скрытых элементов select */
     select[style="display: none;"] {
