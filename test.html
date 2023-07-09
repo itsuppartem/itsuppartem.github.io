@@ -251,7 +251,7 @@ function showElement(element) {
       showElement(katAhoElement)
       fadeIn(katAhoElement);
       fadeOut(katTpElement);
-    } else {
+    } else if (routeSelect.value === "Выберите отдел") {
       refresh();
       hideElement(katTpElement)
       hideElement(katAhoElement)
