@@ -101,12 +101,12 @@
         }
 
 function refresh() {
-  hideElement(temaZElement);
-    hideElement(poNameElement);
-      hideElement(kat1cElement);
-      hideElement(temaZfElement);
-      hideElement(prioritetElement);
-      hideElement(photoElement);
+  // hideElement(temaZElement);
+  //   hideElement(poNameElement);
+  //     hideElement(kat1cElement);
+  //     hideElement(temaZfElement);
+  //     hideElement(prioritetElement);
+  //     hideElement(photoElement);
       fadeOut(temaZElement);
       fadeOut(poNameElement);
       fadeOut(kat1cElement);
@@ -181,20 +181,20 @@ function showElement(element) {
 
     if (routeSelect.value === "ТП") {
       refresh();
-      showElement(katTpElement);
-      hideElement(katAhoElement);
+      // showElement(katTpElement);
+      // hideElement(katAhoElement);
       fadeIn(katTpElement);
       fadeOut(katAhoElement);
     } else if (routeSelect.value === "АХО")
      {refresh();
-      hideElement(katTpElement);
-      showElement(katAhoElement);
+      // hideElement(katTpElement);
+      // showElement(katAhoElement);
       fadeIn(katAhoElement);
       fadeOut(katTpElement);
     } else if (routeSelect.value === "") {
       refresh();
-      hideElement(katTpElement);
-      hideElement(katAhoElement);
+      // hideElement(katTpElement);
+      // hideElement(katAhoElement);
       fadeOut(katAhoElement);
       fadeOut(katTpElement);
     }
@@ -206,14 +206,14 @@ function showElement(element) {
     if (katTpSelect.value === "Один эс")
      {
 
-      showElement(kat1cElement);
+      // showElement(kat1cElement);
       fadeIn(kat1cElement);
     } else if (katTpSelect.value ==="Программное обеспечение"){
 
-      showElement(temaZElement);
-      showElement(poNameElement);
-      showElement(temaZfElement);
-      showElement(prioritetElement);
+      // showElement(temaZElement);
+      // showElement(poNameElement);
+      // showElement(temaZfElement);
+      // showElement(prioritetElement);
       // showElement(photoElement);
       fadeIn(temaZElement);
       fadeIn(poNameElement);
@@ -223,9 +223,9 @@ function showElement(element) {
     } else if (katTpSelect.value ==="Оборудование"){
 
 
-      showElement(temaZElement);
-      showElement(temaZfElement);
-      showElement(prioritetElement);
+      // showElement(temaZElement);
+      // showElement(temaZfElement);
+      // showElement(prioritetElement);
       // showElement(photoElement);
       fadeIn(temaZElement);
       fadeIn(temaZfElement);
@@ -233,12 +233,13 @@ function showElement(element) {
       // fadeIn(photoElement);
     } else if (katTpSelect.value ==="Интернет"){
 
-      showElement(temaZElement);
-      temaZElement.value="Проблемы с интернетом";
-      showElement(temaZfElement);
-      showElement(prioritetElement);
+      // showElement(temaZElement);
+
+      // showElement(temaZfElement);
+      // showElement(prioritetElement);
       // showElement(photoElement);
       fadeIn(temaZElement);
+      temaZElement.value="Проблемы с интернетом";
       fadeIn(temaZfElement);
       fadeIn(prioritetElement);
       // fadeIn(photoElement);
@@ -251,9 +252,9 @@ function showElement(element) {
 
     if (katAhoSelect.value !== "") {
 
-      showElement(temaZElement);
-      showElement(temaZfElement);
-      showElement(prioritetElement);
+      // showElement(temaZElement);
+      // showElement(temaZfElement);
+      // showElement(prioritetElement);
       // showElement(photoElement);
       fadeIn(temaZElement);
       fadeIn(temaZfElement);
@@ -269,74 +270,74 @@ function showElement(element) {
 
 if (kat1cSelect.value !== "") {
 
-  showElement(dei1cElement);
+  // showElement(dei1cElement);
 
   fadeIn(dei1cElement);
 
 } else {
-  hideElement(dei1cElement);
+  // hideElement(dei1cElement);
 
   fadeOut(dei1cElement);
-  hideElement(kat1cElement);
+  // hideElement(kat1cElement);
   fadeOut(kat1cElement);
 }
   }
 function showCategory5() {
 
 if (dei1cSelect.value === "Редактировать") {
-  showElement(temaZElement);
+  // showElement(temaZElement);
   fadeIn(temaZElement);
   temaZElement.value="Редактировать документ";
-  showElement(temaZfElement);
-  showElement(prioritetElement);
+  // showElement(temaZfElement);
+  // showElement(prioritetElement);
   // showElement(photoElement);
   fadeIn(temaZfElement);
   fadeIn(prioritetElement);
   // fadeIn(photoElement);
-  showElement(vidElement);
-  showElement(nomerElement);
+  // showElement(vidElement);
+  // showElement(nomerElement);
   fadeIn(vidElement);
   fadeIn(nomerElement);
 
 
 } else if (dei1cSelect.value === "Создать") {
-  showElement(temaZElement);
+  // showElement(temaZElement);
   fadeIn(temaZElement);
   temaZElement.value="Создать документ";
-  showElement(temaZfElement);
-  showElement(prioritetElement);
+  // showElement(temaZfElement);
+  // showElement(prioritetElement);
   // showElement(photoElement);
   fadeIn(temaZfElement);
   fadeIn(prioritetElement);
   // fadeIn(photoElement);
-  showElement(vidElement);
-  showElement(rec1cElement);
+  // showElement(vidElement);
+  // showElement(rec1cElement);
   fadeIn(rec1cElement);
   fadeIn(vidElement);
 
 
 
 } else if (dei1cSelect.value === "Указать на ошибку") {
-  showElement(temaZElement);
+  // showElement(temaZElement);
   fadeIn(temaZElement);
   temaZElement.value="Ошибка в документе";
-  showElement(temaZfElement);
-  showElement(prioritetElement);
+  // showElement(temaZfElement);
+  // showElement(prioritetElement);
   // showElement(photoElement);
   fadeIn(temaZfElement);
   fadeIn(prioritetElement);
   // fadeIn(photoElement);
-  showElement(vidElement);
-  showElement(nomerElement);
+  // showElement(vidElement);
+  // showElement(nomerElement);
   fadeIn(vidElement);
   fadeIn(nomerElement);
 
 
 }else if (dei1cSelect.value === "Прочее") {
 
-  showElement(temaZElement);
-  showElement(temaZfElement);
-  showElement(prioritetElement);
+  // showElement(temaZElement);
+  // showElement(temaZfElement);
+  // showElement(prioritetElement);
   // showElement(photoElement);
   fadeIn(temaZElement);
   fadeIn(temaZfElement);
@@ -345,19 +346,19 @@ if (dei1cSelect.value === "Редактировать") {
 
 
 }else {
-  hideElement(nomerElement)
+  // hideElement(nomerElement)
   fadeOut(nomerElement)
-  hideElement(vidElement)
+  // hideElement(vidElement)
   fadeOut(vidElement)
-  hideElement(temaZElement);
-  hideElement(temaZfElement);
-  hideElement(prioritetElement);
+  // hideElement(temaZElement);
+  // hideElement(temaZfElement);
+  // hideElement(prioritetElement);
   // hideElement(photoElement);
   fadeOut(temaZElement);
   fadeOut(temaZfElement);
   fadeOut(prioritetElement);
   // fadeOut(photoElement);
-  hideElement(rec1cElement);
+  // hideElement(rec1cElement);
   fadeOut(rec1cElement);
 }
 }
