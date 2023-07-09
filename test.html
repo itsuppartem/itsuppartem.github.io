@@ -240,16 +240,19 @@ function showElement(element) {
       var buttElement=document.getElementById("btn")
 
     if (routeSelect.value === "ТП") {
+      refresh()
       showElement(katTpElement)
       hideElement(katAhoElement)
       fadeIn(katTpElement);
       fadeOut(katAhoElement);
     } else if (routeSelect.value === "АХО") {
+      refresh()
       hideElement(katTpElement)
       showElement(katAhoElement)
       fadeIn(katAhoElement);
       fadeOut(katTpElement);
     } else {
+      refresh()
       hideElement(katTpElement)
       hideElement(katAhoElement)
       fadeOut(katAhoElement);
