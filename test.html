@@ -326,15 +326,6 @@ function showElement(element) {
 
     }
     if (katAhoSelect.value !== "") {
-      showElement(temaZElement)
-      showElement(temaZfElement)
-      showElement(prioritetElement)
-      showElement(photoElement)
-      fadeIn(temaZElement)
-      fadeIn(temaZfElement)
-      fadeIn(prioritetElement)
-      fadeIn(photoElement)
-    } else {
       hideElement(temaZElement)
       hideElement(poNameElement)
       hideElement(kat1cElement)
@@ -347,6 +338,16 @@ function showElement(element) {
       fadeOut(temaZfElement);
       fadeOut(prioritetElement);
       fadeOut(photoElement);
+      showElement(temaZElement)
+      showElement(temaZfElement)
+      showElement(prioritetElement)
+      showElement(photoElement)
+      fadeIn(temaZElement)
+      fadeIn(temaZfElement)
+      fadeIn(prioritetElement)
+      fadeIn(photoElement)
+    } else {
+
 
     }
   }
