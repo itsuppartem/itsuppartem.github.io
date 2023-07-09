@@ -95,51 +95,10 @@
       let tg = window.Telegram.WebApp;
       tg.expand();
       
-// Получаем все необходимые элементы
-// var routeElement = document.getElementById("route");
-// var katTpElement = document.getElementById("kat_tp");
-// var katAhoElement = document.getElementById("kat_aho")
-// var kat1cElement = document.getElementById("kat_1c");
-// var dei1cElement = document.getElementById("dei_1c");
-// var nomerElement = document.getElementById("nomer");
-// var temaZElement = document.getElementById("tema_z");
-// var temaZfElement = document.getElementById("tema_zf");
-// var prioritetElement = document.getElementById("prioritet");
-// var poNameElement = document.getElementById("po_name");
-// var rec1cElement = document.getElementById("rec_1c");
-// var photoElement=document.getElementById("photo")
-// var buttElement=document.getElementById("btn")
-// Скрываем все элементы, кроме route
-// hideElement(katTpElement);
-// hideElement(kat1cElement);
-// hideElement(katAholement);
-// hideElement(dei1cElement);
-// hideElement(nomerElement);
-// hideElement(temaZElement);
-// hideElement(temaZfElement);
-// hideElement(prioritetElement);
-// hideElement(poNameElement);
-// hideElement(rec1cElement);
-// hideElement(photoElement);
-// hideElement(buttElement);
-
-// Добавляем обработчик события изменения для route
-// routeElement.addEventListener("change", function() {
-//   var selectedValue = routeElement.value;
-
-
-//   if (selectedValue === "ТП") {
-//     showElement(katTpElement);
-//   }  else if (selectedValue === "АХО") {
-//     showElement(katAhoElement);
-//   }
-// });
-
-// Функция для скрытия элемента
-function hideElement(element) {
-  element.style.display = "none";
-  element.value = "";
-}
+        function hideElement(element) {
+          element.style.display = "none";
+          element.value = "";
+        }
 
 function refresh() {
   hideElement(temaZElement);
@@ -313,17 +272,17 @@ function showElement(element) {
 
     if (katAhoSelect.value !== "") {
 
-      showElement(temaZElement)
-      showElement(temaZfElement)
-      showElement(prioritetElement)
-      showElement(photoElement)
-      fadeIn(temaZElement)
-      fadeIn(temaZfElement)
-      fadeIn(prioritetElement)
-      fadeIn(photoElement)
+      showElement(temaZElement);
+      showElement(temaZfElement);
+      showElement(prioritetElement);
+      showElement(photoElement);
+      fadeIn(temaZElement);
+      fadeIn(temaZfElement);
+      fadeIn(prioritetElement);
+      fadeIn(photoElement);
     } else {
 
-      refresh()
+      refresh();
     }
   }
 
@@ -331,79 +290,79 @@ function showElement(element) {
 
 if (kat1cSelect.value !== "") {
 
-  showElement(dei1cElement)
+  showElement(dei1cElement);
 
-  fadeIn(dei1cElement)
+  fadeIn(dei1cElement);
 
 } else {
-  hideElement(dei1cElement)
+  hideElement(dei1cElement);
 
-  fadeOut(dei1cElement)
-  hideElement(kat1cElement)
-  fadeOut(kat1cElement)
+  fadeOut(dei1cElement);
+  hideElement(kat1cElement);
+  fadeOut(kat1cElement);
 }
   }
 function showCategory5() {
 
 if (dei1cSelect.value === "Редактировать") {
-  showElement(temaZElement)
-  fadeIn(temaZElement)
+  showElement(temaZElement);
+  fadeIn(temaZElement);
   temaZElement.value="Редактировать документ";
-  showElement(temaZfElement)
-  showElement(prioritetElement)
-  showElement(photoElement)
-  fadeIn(temaZfElement)
-  fadeIn(prioritetElement)
-  fadeIn(photoElement)
-  showElement(vidElement)
-  showElement(nomerElement)
-  fadeIn(vidElement)
-  fadeIn(nomerElement)
+  showElement(temaZfElement);
+  showElement(prioritetElement);
+  showElement(photoElement);
+  fadeIn(temaZfElement);
+  fadeIn(prioritetElement);
+  fadeIn(photoElement);
+  showElement(vidElement);
+  showElement(nomerElement);
+  fadeIn(vidElement);
+  fadeIn(nomerElement);
 
 
 } else if (dei1cSelect.value === "Создать") {
-  showElement(temaZElement)
-  fadeIn(temaZElement)
+  showElement(temaZElement);
+  fadeIn(temaZElement);
   temaZElement.value="Создать документ";
-  showElement(temaZfElement)
-  showElement(prioritetElement)
-  showElement(photoElement)
-  fadeIn(temaZfElement)
-  fadeIn(prioritetElement)
-  fadeIn(photoElement)
-  showElement(vidElement)
-  showElement(rec1cElement)
-  fadeIn(rec1cElement)
-  fadeIn(vidElement)
+  showElement(temaZfElement);
+  showElement(prioritetElement);
+  showElement(photoElement);
+  fadeIn(temaZfElement);
+  fadeIn(prioritetElement);
+  fadeIn(photoElement);
+  showElement(vidElement);
+  showElement(rec1cElement);
+  fadeIn(rec1cElement);
+  fadeIn(vidElement);
 
 
 
 } else if (dei1cSelect.value === "Указать на ошибку") {
-  showElement(temaZElement)
-  fadeIn(temaZElement)
+  showElement(temaZElement);
+  fadeIn(temaZElement);
   temaZElement.value="Ошибка в документе";
-  showElement(temaZfElement)
-  showElement(prioritetElement)
-  showElement(photoElement)
-  fadeIn(temaZfElement)
-  fadeIn(prioritetElement)
-  fadeIn(photoElement)
-  showElement(vidElement)
-  showElement(nomerElement)
-  fadeIn(vidElement)
-  fadeIn(nomerElement)
+  showElement(temaZfElement);
+  showElement(prioritetElement);
+  showElement(photoElement);
+  fadeIn(temaZfElement);
+  fadeIn(prioritetElement);
+  fadeIn(photoElement);
+  showElement(vidElement);
+  showElement(nomerElement);
+  fadeIn(vidElement);
+  fadeIn(nomerElement);
 
 
 }else if (dei1cSelect.value === "Прочее") {
 
-  showElement(temaZElement)
-  showElement(temaZfElement)
-  showElement(prioritetElement)
-  showElement(photoElement)
-  fadeIn(temaZElement)
-  fadeIn(temaZfElement)
-  fadeIn(prioritetElement)
-  fadeIn(photoElement)
+  showElement(temaZElement);
+  showElement(temaZfElement);
+  showElement(prioritetElement);
+  showElement(photoElement);
+  fadeIn(temaZElement);
+  fadeIn(temaZfElement);
+  fadeIn(prioritetElement);
+  fadeIn(photoElement);
 
 
 }else {
@@ -419,8 +378,8 @@ if (dei1cSelect.value === "Редактировать") {
   fadeOut(temaZfElement);
   fadeOut(prioritetElement);
   fadeOut(photoElement);
-  hideElement(rec1cElement)
-  fadeOut(rec1cElement)
+  hideElement(rec1cElement);
+  fadeOut(rec1cElement);
 }
 }
 function checkForm() {
@@ -439,7 +398,7 @@ function checkForm() {
   }
 
   if (isEmpty) {
-    alert('Пожалуйста, заполните все поля.');
+    showElement(buttElement);
   } else {
     alert('Все поля заполнены.');
   }
