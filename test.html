@@ -34,7 +34,7 @@
     </select>
     <select id="kat_tp" style="display: none;" onchange="showCategory2()">
       <option value="">Выберите категорию ТП</option>
-      <option value="1С">1С</option>
+      <option value="Один эс">1С</option>
       <option value="Программное обеспечение">Программное обеспечение</option>
       <option value="Оборудование">Оборудование</option>
       <option value="Интернет">Интернет</option>
@@ -76,7 +76,7 @@
     <input type="text" id="tema_zf" placeholder="Суть задачи(развернуто)"style="display: none;">
     <input type="text" id="nomer" placeholder="Номер документа"style="display: none;">
     <input type="text" id="po_name" placeholder="Название программы"style="display: none;">
-    <input type="text" id="rec_1c" placeholder="Опишите реквизиты документа"style="display: none;">
+    <input type="text" id="rec_onec" placeholder="Опишите реквизиты документа"style="display: none;">
    
     <select id="prioritet" style="display: none;">
       <option value="">Приоритет?</option>
@@ -220,7 +220,7 @@ function showElement(element) {
       const temaZfSelect = document.getElementById("tema_zf");
       const prioritetSelect = document.getElementById("prioritet");
       const poNameSelect = document.getElementById("po_name");
-      const rec1cSelect = document.getElementById("rec_1c");
+      const rec1cSelect = document.getElementById("rec_onec");
       const photoSelect=document.getElementById("photo");
       let close1 = document.getElementById('btn');
       var routeElement = document.getElementById("route");
@@ -233,7 +233,7 @@ function showElement(element) {
       var temaZfElement = document.getElementById("tema_zf");
       var prioritetElement = document.getElementById("prioritet");
       var poNameElement = document.getElementById("po_name");
-      var rec1cElement = document.getElementById("rec_1c");
+      var rec1cElement = document.getElementById("rec_onec");
       var photoElement=document.getElementById("photo");
       var buttElement=document.getElementById("btn");
     function showCategory() {
@@ -263,7 +263,7 @@ function showElement(element) {
   function showCategory2() {
 
 
-    if (katTpSelect.value === "1C")
+    if (katTpSelect.value === "Один эс")
      {
 
       showElement(kat1cElement);
