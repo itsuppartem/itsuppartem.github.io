@@ -97,67 +97,70 @@
       const routeSelect = document.getElementById('route');
       const katTpSelect = document.getElementById('kat_tp');
       let close1 = document.getElementById('btn')
-          function showCategory() {
-      // Скрываем все элементы, кроме route
-      hideAllElements();
-      
-      // Отображаем kat_tp при выборе ТП
-      if (document.getElementById("route").value === "ТП") {
-        document.getElementById("kat_tp").style.display = "block";
-      }
-      
-      // Отображаем kat_1c при выборе 1С
-      if (document.getElementById("route").value === "1С") {
-        document.getElementById("kat_1c").style.display = "block";
-      }
-      
-      // // Отображаем dei_1c при выборе любого значения в kat_1c
-      // if (document.getElementById("kat_1c").value !== "") {
-      //   document.getElementById("dei_1c").style.display = "block";
-      // }
-      
-      // // Отображаем nomer и tema_z при выборе Редактировать и указать на ошибку в dei_1c
-      // if (document.getElementById("dei_1c").value === "Редактировать и указать на ошибку") {
-      //   document.getElementById("nomer").style.display = "block";
-      //   document.getElementById("tema_z").style.display = "block";
-      //   document.getElementById("tema_z").value = "Редактировать документ";
-      // }
-      
-      // // Отображаем tema_zf и prioritet после tema_z
-      // if (document.getElementById("tema_z").style.display === "block") {
-      //   document.getElementById("tema_zf").style.display = "block";
-      //   document.getElementById("prioritet").style.display = "block";
-      // }
-      
-      // // Отображаем rec_1c и prioritet после dei_1c выбора Создать
-      // if (document.getElementById("dei_1c").value === "Создать") {
-      //   document.getElementById("rec_1c").style.display = "block";
-      //   document.getElementById("prioritet").style.display = "block";
-      //   document.getElementById("tema_z").value = "Создать документ";
-      // }
-      
-      // // Отображаем po_name, tema_z и prioritet при выборе Программное обеспечение в kat_tp
-      // if (document.getElementById("kat_tp").value === "Программное обеспечение") {
-      //   document.getElementById("po_name").style.display = "block";
-      //   document.getElementById("tema_z").style.display = "block";
-      //   document.getElementById("prioritet").style.display = "block";
-      // }
-      
-      // // Отображаем tema_zf и prioritet при выборе Интернет в kat_tp
-      // if (document.getElementById("kat_tp").value === "Интернет") {
-      //   document.getElementById("tema_z").value = "Проблемы с интернетом";
-      //   document.getElementById("tema_zf").style.display = "block";
-      //   document.getElementById("prioritet").style.display = "block";
-      // }
-      
-      // // Отображаем kat_aho, tema_z, tema_zf и prioritet при выборе АХО в route
-      // if (document.getElementById("route").value === "АХО") {
-      //   document.getElementById("kat_aho").style.display = "block";
-      //   document.getElementById("tema_z").style.display = "block";
-      //   document.getElementById("tema_zf").style.display = "block";
-      //   document.getElementById("prioritet").style.display = "block";
-      // }
-    }
+// Получаем все необходимые элементы
+var routeElement = document.getElementById("route");
+var katTpElement = document.getElementById("kat_tp");
+var kat1cElement = document.getElementById("kat_1c");
+var dei1cElement = document.getElementById("dei_1c");
+var nomerElement = document.getElementById("nomer");
+var temaZElement = document.getElementById("tema_z");
+var temaZfElement = document.getElementById("tema_zf");
+var prioritetElement = document.getElementById("prioritet");
+var poNameElement = document.getElementById("po_name");
+var rec1cElement = document.getElementById("rec_1c");
+
+// Скрываем все элементы, кроме route
+hideElement(katTpElement);
+hideElement(kat1cElement);
+hideElement(dei1cElement);
+hideElement(nomerElement);
+hideElement(temaZElement);
+hideElement(temaZfElement);
+hideElement(prioritetElement);
+hideElement(poNameElement);
+hideElement(rec1cElement);
+
+// Добавляем обработчик события изменения для route
+routeElement.addEventListener("change", function() {
+  var selectedValue = routeElement.value;
+
+  // Скрываем все элементы
+  hideElement(katTpElement);
+  hideElement(kat1cElement);
+  hideElement(dei1cElement);
+  hideElement(nomerElement);
+  hideElement(temaZElement);
+  hideElement(temaZfElement);
+  hideElement(prioritetElement);
+  hideElement(poNameElement);
+  hideElement(rec1cElement);
+
+  if (selectedValue === "ТП") {
+    showElement(katTpElement);
+  } else if (selectedValue === "1С") {
+    showElement(kat1cElement);
+    showElement(dei1cElement);
+    showElement(temaZElement);
+    showElement(temaZfElement);
+    showElement(prioritetElement);
+  } else if (selectedValue === "АХО") {
+    showElement(katAhoElement);
+    showElement(temaZElement);
+    showElement(temaZfElement);
+    showElement(prioritetElement);
+  }
+});
+
+// Функция для скрытия элемента
+function hideElement(element) {
+  element.style.display = "none";
+  element.value = "";
+}
+
+// Функция для отображения элемента
+function showElement(element) {
+  element.style.display = "block";
+}
 
     function hideAllElements() {
       document.getElementById("kat_tp").style.display = "none";
