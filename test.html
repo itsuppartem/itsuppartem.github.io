@@ -365,7 +365,7 @@ if (dei1cSelect.value === "Редактировать") {
 function checkForm() {
   var form = document.querySelector('form'); // Замените 'form' на селектор вашей формы
 
-  var elements = form.querySelectorAll('[style="display: block;"]');
+  var elements = form.querySelectorAll('[style*="opacity: 1"]');
   var isEmpty = false;
 
   for (var i = 0; i < elements.length; i++) {
