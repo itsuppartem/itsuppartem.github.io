@@ -47,7 +47,16 @@
       <option value="Торговое оборудование">Торговое оборудование</option>
       <option value="Прочее">Прочее</option>
     </select>
+    <select id="kat_1c" style="display: none;">
+      <option value="">Выберите категорию АХО</option>
+      <option value="Охрана">Охрана</option>
+      <option value="Входная группа">Входная группа</option>
+      <option value="Торговое оборудование">Торговое оборудование</option>
+      <option value="Прочее">Прочее</option>
+    </select>
     <div id="error"></div>
+    <label for="photo">Выберите фотографию:</label>
+    <input type="file" id="photo" name="photo">
     <button id="btn">Поставить задачу</button> 
   </form>
     <script>
@@ -142,7 +151,7 @@
         let userid = document.createElement('p'); //создаем еще параграф 
         userid.innerText = `${tg.initDataUnsafe.user.id}`; //показываем user_id
         usercard.appendChild(userid); //добавляем</script> -->
-
+        
 
 
 
