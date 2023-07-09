@@ -6,38 +6,15 @@
  </head>
  <body>
   <style>
-    @media screen and (max-width: 600px) {
-  /* Стили для экранов шириной до 600 пикселей */
-  select, input[type="text"], button {
-  width: 300px;
-  height: 40px;
-  font-size: 16px;
-  box-sizing: border-box; /* Учитывать границы и отступы внутри элемента */
-}
-}
 
-@media screen and (min-width: 601px) and (max-width: 1200px) {
-  /* Стили для экранов шириной от 601 до 1200 пикселей */
-  select, input[type="text"], button {
-  width: 450x;
-  height: 80px;
-  font-size: 20px;
-  box-sizing: border-box; /* Учитывать границы и отступы внутри элемента */
-}
-}
-
-@media screen and (min-width: 1201px) {
-  /* Стили для экранов шириной более 1200 пикселей */
-  select, input[type="text"], button {
-  width: 600px;
-  height: 120px;
-  font-size: 25px;
-  box-sizing: border-box; /* Учитывать границы и отступы внутри элемента */
-}
-}
 
     /* Стили для элементов select */
-
+    select, input[type="text"], button {
+      width: 600px;
+      height: 120px;
+      font-size: 25px;
+      box-sizing: border-box; /* Учитывать границы и отступы внутри элемента */
+    }
   
     /* Стили для скрытых элементов select */
     select[style="display: none;"] {
