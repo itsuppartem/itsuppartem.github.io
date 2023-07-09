@@ -265,11 +265,11 @@ function showElement(element) {
 
     if (katTpSelect.value === "1C")
      {
-      refresh();
+
       showElement(kat1cElement);
       fadeIn(kat1cElement);
     } else if (katTpSelect.value ==="Программное обеспечение"){
-      refresh();
+
       showElement(temaZElement);
       showElement(poNameElement);
       showElement(temaZfElement);
@@ -282,7 +282,7 @@ function showElement(element) {
       fadeIn(photoElement);
     } else if (katTpSelect.value ==="Оборудование"){
 
-      refresh();
+
       showElement(temaZElement);
       showElement(temaZfElement);
       showElement(prioritetElement);
@@ -292,7 +292,7 @@ function showElement(element) {
       fadeIn(prioritetElement);
       fadeIn(photoElement);
     } else if (katTpSelect.value ==="Интернет"){
-      refresh();
+
       showElement(temaZElement);
       temaZElement.value="Проблемы с интернетом";
       showElement(temaZfElement);
@@ -302,10 +302,10 @@ function showElement(element) {
       fadeIn(temaZfElement);
       fadeIn(prioritetElement);
       fadeIn(photoElement);
-    } else if (katTpSelect.value ==="") {
+    } 
+    if (katTpSelect.value ==="") {
       refresh();
-
-    }
+    } else {refresh();}
   }
     function showCategory3() {
 
