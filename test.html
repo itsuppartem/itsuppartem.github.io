@@ -52,7 +52,7 @@
       <option value="УТ">УТ</option>
       <option value="Прочее">Прочее</option>
     </select>
-    <select id="dei_onec" style="display: none;">
+    <select id="dei_onec" style="display: none;" onchange="showCategory4()">
       <option value="">Какого вида действие?</option>
       <option value="Редактировать">Редактировать</option>
       <option value="Указать на ошибку">Указать на ошибку</option>
@@ -222,6 +222,7 @@ function showElement(element) {
       const poNameSelect = document.getElementById("po_name");
       const rec1cSelect = document.getElementById("rec_onec");
       const photoSelect=document.getElementById("photo");
+      const vidSelect=document.getElementById("vid_doka");
       let close1 = document.getElementById('btn');
       var routeElement = document.getElementById("route");
       var katTpElement = document.getElementById("kat_tp");
@@ -236,6 +237,7 @@ function showElement(element) {
       var rec1cElement = document.getElementById("rec_onec");
       var photoElement=document.getElementById("photo");
       var buttElement=document.getElementById("btn");
+      var vidElement=document.getElementById("vid_doka");
     function showCategory() {
  
 
@@ -329,6 +331,71 @@ function showElement(element) {
 
 if (kat1cSelect.value !== "") {
 
+  showElement(dei1cElement)
+
+  fadeIn(dei1cElement)
+
+} else {
+  hideElement(dei1cElement)
+
+  fadeOut(dei1cElement)
+  hideElement(kat1cElement)
+  fadeOut(kat1cElement)
+}
+  }
+function showCategory5() {
+
+if (dei1cSelect.value === "Редактировать") {
+  showElement(temaZElement)
+  fadeIn(temaZElement)
+  temaZElement.value="Редактировать документ";
+  showElement(temaZfElement)
+  showElement(prioritetElement)
+  showElement(photoElement)
+  fadeIn(temaZfElement)
+  fadeIn(prioritetElement)
+  fadeIn(photoElement)
+  showElement(vidElement)
+  showElement(nomerElement)
+  fadeIn(vidElement)
+  fadeIn(nomerElement)
+
+
+} else if (dei1cSelect.value === "Создать") {
+  showElement(temaZElement)
+  fadeIn(temaZElement)
+  temaZElement.value="Создать документ";
+  showElement(temaZfElement)
+  showElement(prioritetElement)
+  showElement(photoElement)
+  fadeIn(temaZfElement)
+  fadeIn(prioritetElement)
+  fadeIn(photoElement)
+  showElement(vidElement)
+  showElement(rec1cElement)
+  fadeIn(rec1cElement)
+  fadeIn(vidElement)
+
+
+
+} else if (dei1cSelect.value === "Указать на ошибку") {
+  showElement(temaZElement)
+  fadeIn(temaZElement)
+  temaZElement.value="Ошибка в документе";
+  showElement(temaZfElement)
+  showElement(prioritetElement)
+  showElement(photoElement)
+  fadeIn(temaZfElement)
+  fadeIn(prioritetElement)
+  fadeIn(photoElement)
+  showElement(vidElement)
+  showElement(nomerElement)
+  fadeIn(vidElement)
+  fadeIn(nomerElement)
+
+
+}else if (dei1cSelect.value === "Прочее") {
+
   showElement(temaZElement)
   showElement(temaZfElement)
   showElement(prioritetElement)
@@ -337,9 +404,25 @@ if (kat1cSelect.value !== "") {
   fadeIn(temaZfElement)
   fadeIn(prioritetElement)
   fadeIn(photoElement)
-} else {
 
-  refresh()
+
+}else {
+  hideElement(dei1cElement)
+  fadeOut(dei1cElement)
+  hideElement(nomerElement)
+  fadeOut(nomerElement)
+  hideElement(vidElement)
+  fadeOut(vidElement)
+  hideElement(temaZElement);
+  hideElement(temaZfElement);
+  hideElement(prioritetElement);
+  hideElement(photoElement);
+  fadeOut(temaZElement);
+  fadeOut(temaZfElement);
+  fadeOut(prioritetElement);
+  fadeOut(photoElement);
+  hideElement(rec1cElement)
+  fadeOut(rec1cElement)
 }
 }
 
