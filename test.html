@@ -86,7 +86,6 @@
     <input type="text" id="po_name" placeholder="Название программы"style="display: none;">
     <input type="text" id="rec_1c" placeholder="Опишите реквизиты документа"style="display: none;">
     <input type="text" id="tema_zf" placeholder="Суть задачи(развернуто)"style="display: none;">
-    <label for="photo">Выберите фотографию:</label>
     <input type="file" id="photo" name="photo" style="display : none">
     <button id="btn" style="display: none;">Поставить задачу</button> 
   </form>
@@ -94,9 +93,7 @@
  
       let tg = window.Telegram.WebApp;
       tg.expand();
-      const routeSelect = document.getElementById('route');
-      const katTpSelect = document.getElementById('kat_tp');
-      let close1 = document.getElementById('btn')
+      
 // Получаем все необходимые элементы
 // var routeElement = document.getElementById("route");
 // var katTpElement = document.getElementById("kat_tp");
@@ -197,7 +194,21 @@ function showElement(element) {
       op -= op * 0.1;
     }, 10);
   }
+      const routeSelect = document.getElementById('route');
+      const katTpSelect = document.getElementById('kat_tp');
+      const katAhoSelect = document.getElementById("kat_aho")
+      const kat1cSelect = document.getElementById("kat_1c");
+      const dei1cSelect= document.getElementById("dei_1c");
+      const nomerSelect = document.getElementById("nomer");
+      const temaZSelect = document.getElementById("tema_z");
+      const temaZfSelect = document.getElementById("tema_zf");
+      const prioritetSelect = document.getElementById("prioritet");
+      const poNameSelect = document.getElementById("po_name");
+      const rec1cSelect = document.getElementById("rec_1c");
+      const photoSelect=document.getElementById("photo")
+      let close1 = document.getElementById('btn')
     function showCategory() {
+      
       var routeElement = document.getElementById("route");
       var katTpElement = document.getElementById("kat_tp");
       var katAhoElement = document.getElementById("kat_aho")
@@ -227,6 +238,54 @@ function showElement(element) {
       hideElement(katAhoElement)
       fadeOut(katAhoElement);
       fadeOut(katTpElement);
+    }
+    if (katTpSelect.value === "1C") {
+      showElement(kat1cElement)
+      fadeIn(kat1cElement);
+    } else if (katTpSelect.value ==="Программное обеспечение"){
+      showElement(temaZElement)
+      showElement(poNameElement)
+      showElement(temaZfElement)
+      showElement(prioritetElement)
+      showElement(photoElement)
+      fadeIn(temaZElement)
+      fadeIn(poNameElement)
+      fadeIn(temaZfElement)
+      fadeIn(prioritetElement)
+      fadeIn(photoElement)
+    } else if (katTpSelect.value ==="Оборудование"){
+      showElement(temaZElement)
+      showElement(temaZfElement)
+      showElement(prioritetElement)
+      showElement(photoElement)
+      fadeIn(temaZElement)
+      fadeIn(temaZfElement)
+      fadeIn(prioritetElement)
+      fadeIn(photoElement)
+    } else if (katTpSelect.value ==="Интернет"){
+      showElement(temaZElement)
+      temaZElement.value="Проблемы с интернетом"
+      showElement(temaZfElement)
+      showElement(prioritetElement)
+      showElement(photoElement)
+      fadeIn(temaZElement)
+      fadeIn(temaZfElement)
+      fadeIn(prioritetElement)
+      fadeIn(photoElement)
+    } else {
+      hideElement(temaZElement)
+      hideElement(poNameElement)
+      hideElement(kat1cElement)
+      hideElement(temaZfElement)
+      hideElement(prioritetElement)
+      hideElement(photoElement)
+      fadeOut(temaZElement);
+      fadeOut(poNameElement);
+      fadeOut(kat1cElement);
+      fadeOut(temaZfElement);
+      fadeOut(prioritetElement);
+      fadeOut(photoElement);
+
     }
   }
 
