@@ -29,7 +29,7 @@
     }
   </style>
   <form id="form">
-    <select id="route">
+    <select id="route" onchange="showCategory()">
       <option value="">Выберите отдел</option>
       <option value="ТП">ТП</option>
       <option value="АХО">АХО</option>
@@ -41,27 +41,27 @@
       <option value="Оборудование">Оборудование</option>
       <option value="Интернет">Интернет</option>
     </select>
-    <select id="kat_aho" >
+    <select id="kat_aho" style="display: none;">
       <option value="">Выберите категорию АХО</option>
       <option value="Охрана">Охрана</option>
       <option value="Входная группа">Входная группа</option>
       <option value="Торговое оборудование">Торговое оборудование</option>
       <option value="Прочее">Прочее</option>
     </select>
-    <select id="kat_1c" >
+    <select id="kat_1c" style="display: none;">
       <option value="">Выберите категорию 1С</option>
       <option value="Розница">Розница</option>
       <option value="УТ">УТ</option>
       <option value="Прочее">Прочее</option>
     </select>
-    <select id="dei_1c">
+    <select id="dei_1c" style="display: none;">
       <option value="">Какого вида действие?</option>
       <option value="Редактировать">Редактировать</option>
       <option value="Указать на ошибку">Указать на ошибку</option>
       <option value="Создать">Создать</option>
       <option value="Прочее">Прочее</option>
     </select>
-    <select id="vid_doka" >
+    <select id="vid_doka" style="display: none;">
       <option value="">Вид документа?</option>
       <option value="РКО">РКО</option>
       <option value="Эквайринговая операция">Эквайринговая операция</option>
@@ -72,7 +72,7 @@
       <option value="Заказ покупателя">Заказ покупателя</option>
       <option value="Прочее">Прочее</option>
     </select>
-    <select id="prioritet" >
+    <select id="prioritet" style="display: none;">
       <option value="">Приоритет?</option>
       <option value="Улучшение работы">Улучшение работы</option>
       <option value="Низкий">Низкий</option>
@@ -81,14 +81,14 @@
       <option value="Критический">Критический</option>
     </select>
     <div id="error"></div>
-    <input type="text" id="tema_z" placeholder="Тема задачи(кратко)">
-    <input type="text" id="nomer" placeholder="Номер документа">
-    <input type="text" id="po_name" placeholder="Название программы">
-    <input type="text" id="rec_1c" placeholder="Опишите реквизиты документа">
-    <input type="text" id="tema_zf" placeholder="Суть задачи(развернуто)">
+    <input type="text" id="tema_z" placeholder="Тема задачи(кратко)"style="display: none;">
+    <input type="text" id="nomer" placeholder="Номер документа"style="display: none;">
+    <input type="text" id="po_name" placeholder="Название программы"style="display: none;">
+    <input type="text" id="rec_1c" placeholder="Опишите реквизиты документа"style="display: none;">
+    <input type="text" id="tema_zf" placeholder="Суть задачи(развернуто)"style="display: none;">
     <label for="photo">Выберите фотографию:</label>
-    <input type="file" id="photo" name="photo">
-    <button id="btn">Поставить задачу</button> 
+    <input type="file" id="photo" name="photo" style="display : none">
+    <button id="btn" style="display: none;">Поставить задачу</button> 
   </form>
     <script>
  
@@ -112,30 +112,30 @@ var rec1cElement = document.getElementById("rec_1c");
 var photoElement=document.getElementById("photo")
 var buttElement=document.getElementById("btn")
 // Скрываем все элементы, кроме route
-hideElement(katTpElement);
-hideElement(kat1cElement);
-hideElement(katAholement);
-hideElement(dei1cElement);
-hideElement(nomerElement);
-hideElement(temaZElement);
-hideElement(temaZfElement);
-hideElement(prioritetElement);
-hideElement(poNameElement);
-hideElement(rec1cElement);
-hideElement(photoElement);
-hideElement(buttElement);
+// hideElement(katTpElement);
+// hideElement(kat1cElement);
+// hideElement(katAholement);
+// hideElement(dei1cElement);
+// hideElement(nomerElement);
+// hideElement(temaZElement);
+// hideElement(temaZfElement);
+// hideElement(prioritetElement);
+// hideElement(poNameElement);
+// hideElement(rec1cElement);
+// hideElement(photoElement);
+// hideElement(buttElement);
 
 // Добавляем обработчик события изменения для route
-routeElement.addEventListener("change", function() {
-  var selectedValue = routeElement.value;
+// routeElement.addEventListener("change", function() {
+//   var selectedValue = routeElement.value;
 
 
-  if (selectedValue === "ТП") {
-    showElement(katTpElement);
-  }  else if (selectedValue === "АХО") {
-    showElement(katAhoElement);
-  }
-});
+//   if (selectedValue === "ТП") {
+//     showElement(katTpElement);
+//   }  else if (selectedValue === "АХО") {
+//     showElement(katAhoElement);
+//   }
+// });
 
 // Функция для скрытия элемента
 function hideElement(element) {
@@ -171,54 +171,64 @@ function showElement(element) {
       //   tg.close();
       // });
 
-  //     function fadeIn(element) {
-  //   var op = 0.1; // начальная прозрачность
-  //   element.style.opacity = op;
-  //   element.style.display = "block";
+      function fadeIn(element) {
+    var op = 0.1; // начальная прозрачность
+    element.style.opacity = op;
+    element.style.display = "block";
 
-  //   var timer = setInterval(function () {
-  //     if (op >= 1) {
-  //       clearInterval(timer);
-  //     }
-  //     element.style.opacity = op;
-  //     op += op * 0.1;
-  //   }, 10);
-  // }
+    var timer = setInterval(function () {
+      if (op >= 1) {
+        clearInterval(timer);
+      }
+      element.style.opacity = op;
+      op += op * 0.1;
+    }, 10);
+  }
 
-  // function fadeOut(element) {
-  //   var op = 1; // начальная прозрачность
+  function fadeOut(element) {
+    var op = 1; // начальная прозрачность
 
-  //   var timer = setInterval(function () {
-  //     if (op <= 0.1) {
-  //       clearInterval(timer);
-  //       element.style.display = "none";
-  //     }
-  //     element.style.opacity = op;
-  //     op -= op * 0.1;
-  //   }, 10);
-  // }
-  //     function showCategory() {
-  //       var routeSelect = document.getElementById("route");
-  //   var tpSelect = document.getElementById("kat_tp");
-  //   var ahoSelect = document.getElementById("kat_aho");
+    var timer = setInterval(function () {
+      if (op <= 0.1) {
+        clearInterval(timer);
+        element.style.display = "none";
+      }
+      element.style.opacity = op;
+      op -= op * 0.1;
+    }, 10);
+  }
+    function showCategory() {
+      var routeElement = document.getElementById("route");
+      var katTpElement = document.getElementById("kat_tp");
+      var katAhoElement = document.getElementById("kat_aho")
+      var kat1cElement = document.getElementById("kat_1c");
+      var dei1cElement = document.getElementById("dei_1c");
+      var nomerElement = document.getElementById("nomer");
+      var temaZElement = document.getElementById("tema_z");
+      var temaZfElement = document.getElementById("tema_zf");
+      var prioritetElement = document.getElementById("prioritet");
+      var poNameElement = document.getElementById("po_name");
+      var rec1cElement = document.getElementById("rec_1c");
+      var photoElement=document.getElementById("photo")
+      var buttElement=document.getElementById("btn")
 
-  //   if (routeSelect.value === "ТП") {
-  //     tpSelect.style.display = "block";
-  //     ahoSelect.style.display = "none";
-  //     fadeIn(tpSelect);
-  //     fadeOut(ahoSelect);
-  //   } else if (routeSelect.value === "АХО") {
-  //     tpSelect.style.display = "none";
-  //     ahoSelect.style.display = "block";
-  //     fadeIn(ahoSelect);
-  //     fadeOut(tpSelect);
-  //   } else {
-  //     tpSelect.style.display = "none";
-  //     ahoSelect.style.display = "none";
-  //     fadeOut(tpSelect);
-  //     fadeOut(ahoSelect);
-  //   }
-  // }
+    if (routeSelect.value === "ТП") {
+      showElement(katTpElement)
+      hideElement(katAhoElement)
+      fadeIn(tpSelect);
+      fadeOut(ahoSelect);
+    } else if (routeSelect.value === "АХО") {
+      hideElement(katTpElement)
+      showElement(katAhoElement)
+      fadeIn(ahoSelect);
+      fadeOut(tpSelect);
+    } else {
+      tpSelect.style.display = "none";
+      ahoSelect.style.display = "none";
+      fadeOut(tpSelect);
+      fadeOut(ahoSelect);
+    }
+  }
 
 
     </script>
