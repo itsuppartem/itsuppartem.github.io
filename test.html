@@ -250,7 +250,7 @@ function showElement(element) {
       showElement(katAhoElement)
       fadeIn(katAhoElement);
       fadeOut(katTpElement);
-    } else if (routeSelect.value === "Выберите отдел") {
+    } else if (routeSelect.value === "") {
       refresh();
       hideElement(katTpElement)
       hideElement(katAhoElement)
@@ -259,166 +259,118 @@ function showElement(element) {
     }
 
   }
-  function showCategory2() {
-    const routeSelect = document.getElementById('route');
-      const katTpSelect = document.getElementById('kat_tp');
-      const katAhoSelect = document.getElementById("kat_aho")
-      const kat1cSelect = document.getElementById("kat_1c");
-      const dei1cSelect= document.getElementById("dei_1c");
-      const nomerSelect = document.getElementById("nomer");
-      const temaZSelect = document.getElementById("tema_z");
-      const temaZfSelect = document.getElementById("tema_zf");
-      const prioritetSelect = document.getElementById("prioritet");
-      const poNameSelect = document.getElementById("po_name");
-      const rec1cSelect = document.getElementById("rec_1c");
-      const photoSelect=document.getElementById("photo")
-      let close1 = document.getElementById('btn')
-      var routeElement = document.getElementById("route");
-      var katTpElement = document.getElementById("kat_tp");
-      var katAhoElement = document.getElementById("kat_aho")
-      var kat1cElement = document.getElementById("kat_1c");
-      var dei1cElement = document.getElementById("dei_1c");
-      var nomerElement = document.getElementById("nomer");
-      var temaZElement = document.getElementById("tema_z");
-      var temaZfElement = document.getElementById("tema_zf");
-      var prioritetElement = document.getElementById("prioritet");
-      var poNameElement = document.getElementById("po_name");
-      var rec1cElement = document.getElementById("rec_1c");
-      var photoElement=document.getElementById("photo")
-      var buttElement=document.getElementById("btn")
+  // function showCategory2() {
+  //   const routeSelect = document.getElementById('route');
+  //     const katTpSelect = document.getElementById('kat_tp');
+  //     const katAhoSelect = document.getElementById("kat_aho")
+  //     const kat1cSelect = document.getElementById("kat_1c");
+  //     const dei1cSelect= document.getElementById("dei_1c");
+  //     const nomerSelect = document.getElementById("nomer");
+  //     const temaZSelect = document.getElementById("tema_z");
+  //     const temaZfSelect = document.getElementById("tema_zf");
+  //     const prioritetSelect = document.getElementById("prioritet");
+  //     const poNameSelect = document.getElementById("po_name");
+  //     const rec1cSelect = document.getElementById("rec_1c");
+  //     const photoSelect=document.getElementById("photo")
+  //     let close1 = document.getElementById('btn')
+  //     var routeElement = document.getElementById("route");
+  //     var katTpElement = document.getElementById("kat_tp");
+  //     var katAhoElement = document.getElementById("kat_aho")
+  //     var kat1cElement = document.getElementById("kat_1c");
+  //     var dei1cElement = document.getElementById("dei_1c");
+  //     var nomerElement = document.getElementById("nomer");
+  //     var temaZElement = document.getElementById("tema_z");
+  //     var temaZfElement = document.getElementById("tema_zf");
+  //     var prioritetElement = document.getElementById("prioritet");
+  //     var poNameElement = document.getElementById("po_name");
+  //     var rec1cElement = document.getElementById("rec_1c");
+  //     var photoElement=document.getElementById("photo")
+  //     var buttElement=document.getElementById("btn")
 
-    if (katTpSelect.value === "1C") {
-      refresh()
-      showElement(kat1cElement)
-      fadeIn(kat1cElement);
-    } else if (katTpSelect.value ==="Программное обеспечение"){
-      // hideElement(temaZElement)
-      // hideElement(poNameElement)
-      // hideElement(kat1cElement)
-      // hideElement(temaZfElement)
-      // hideElement(prioritetElement)
-      // hideElement(photoElement)
-      // fadeOut(temaZElement);
-      // fadeOut(poNameElement);
-      // fadeOut(kat1cElement);
-      // fadeOut(temaZfElement);
-      // fadeOut(prioritetElement);
-      // fadeOut(photoElement);
+  //   if (katTpSelect.value === "1C") {
+  //     showElement(kat1cElement)
+  //     fadeIn(kat1cElement);
+  //   } else if (katTpSelect.value ==="Программное обеспечение"){
 
-      showElement(temaZElement)
-      showElement(poNameElement)
-      showElement(temaZfElement)
-      showElement(prioritetElement)
-      showElement(photoElement)
-      fadeIn(temaZElement)
-      fadeIn(poNameElement)
-      fadeIn(temaZfElement)
-      fadeIn(prioritetElement)
-      fadeIn(photoElement)
-    } else if (katTpSelect.value ==="Оборудование"){
-      // hideElement(temaZElement)
-      // hideElement(poNameElement)
-      // hideElement(kat1cElement)
-      hideElement(temaZfElement)
-      // hideElement(prioritetElement)
-      // hideElement(photoElement)
-      // fadeOut(temaZElement);
-      // fadeOut(poNameElement);
-      // fadeOut(kat1cElement);
-      // fadeOut(temaZfElement);
-      // fadeOut(prioritetElement);
-      // fadeOut(photoElement);
+  //     showElement(temaZElement)
+  //     showElement(poNameElement)
+  //     showElement(temaZfElement)
+  //     showElement(prioritetElement)
+  //     showElement(photoElement)
+  //     fadeIn(temaZElement)
+  //     fadeIn(poNameElement)
+  //     fadeIn(temaZfElement)
+  //     fadeIn(prioritetElement)
+  //     fadeIn(photoElement)
+  //   } else if (katTpSelect.value ==="Оборудование"){
 
-      showElement(temaZElement)
-      showElement(temaZfElement)
-      showElement(prioritetElement)
-      showElement(photoElement)
-      fadeIn(temaZElement)
-      fadeIn(temaZfElement)
-      fadeIn(prioritetElement)
-      fadeIn(photoElement)
-    } else if (katTpSelect.value ==="Интернет"){
-      // hideElement(temaZElement)
-      // hideElement(poNameElement)
-      // hideElement(kat1cElement)
-      // hideElement(temaZfElement)
-      // hideElement(prioritetElement)
-      // hideElement(photoElement)
-      // fadeOut(temaZElement);
-      // fadeOut(poNameElement);
-      // fadeOut(kat1cElement);
-      // fadeOut(temaZfElement);
-      // fadeOut(prioritetElement);
-      // fadeOut(photoElement);
 
-      showElement(temaZElement)
-      temaZElement.value="Проблемы с интернетом"
-      showElement(temaZfElement)
-      showElement(prioritetElement)
-      showElement(photoElement)
-      fadeIn(temaZElement)
-      fadeIn(temaZfElement)
-      fadeIn(prioritetElement)
-      fadeIn(photoElement)
-    } else {
-      refresh()
+  //     showElement(temaZElement)
+  //     showElement(temaZfElement)
+  //     showElement(prioritetElement)
+  //     showElement(photoElement)
+  //     fadeIn(temaZElement)
+  //     fadeIn(temaZfElement)
+  //     fadeIn(prioritetElement)
+  //     fadeIn(photoElement)
+  //   } else if (katTpSelect.value ==="Интернет"){
 
-    }
-  }
-    function showCategory3() {
-      const routeSelect = document.getElementById('route');
-      const katTpSelect = document.getElementById('kat_tp');
-      const katAhoSelect = document.getElementById("kat_aho")
-      const kat1cSelect = document.getElementById("kat_1c");
-      const dei1cSelect= document.getElementById("dei_1c");
-      const nomerSelect = document.getElementById("nomer");
-      const temaZSelect = document.getElementById("tema_z");
-      const temaZfSelect = document.getElementById("tema_zf");
-      const prioritetSelect = document.getElementById("prioritet");
-      const poNameSelect = document.getElementById("po_name");
-      const rec1cSelect = document.getElementById("rec_1c");
-      const photoSelect=document.getElementById("photo")
-      let close1 = document.getElementById('btn')
-      var routeElement = document.getElementById("route");
-      var katTpElement = document.getElementById("kat_tp");
-      var katAhoElement = document.getElementById("kat_aho")
-      var kat1cElement = document.getElementById("kat_1c");
-      var dei1cElement = document.getElementById("dei_1c");
-      var nomerElement = document.getElementById("nomer");
-      var temaZElement = document.getElementById("tema_z");
-      var temaZfElement = document.getElementById("tema_zf");
-      var prioritetElement = document.getElementById("prioritet");
-      var poNameElement = document.getElementById("po_name");
-      var rec1cElement = document.getElementById("rec_1c");
-      var photoElement=document.getElementById("photo")
-      var buttElement=document.getElementById("btn")
-    if (katAhoSelect.value !== "") {
-      // hideElement(temaZElement)
-      // hideElement(poNameElement)
-      // hideElement(kat1cElement)
-      // hideElement(temaZfElement)
-      // hideElement(prioritetElement)
-      // hideElement(photoElement)
-      // fadeOut(temaZElement);
-      // fadeOut(poNameElement);
-      // fadeOut(kat1cElement);
-      // fadeOut(temaZfElement);
-      // fadeOut(prioritetElement);
-      // fadeOut(photoElement);
+  //     showElement(temaZElement)
+  //     temaZElement.value="Проблемы с интернетом"
+  //     showElement(temaZfElement)
+  //     showElement(prioritetElement)
+  //     showElement(photoElement)
+  //     fadeIn(temaZElement)
+  //     fadeIn(temaZfElement)
+  //     fadeIn(prioritetElement)
+  //     fadeIn(photoElement)
+  //   } else {
+  //     refresh()
 
-      showElement(temaZElement)
-      showElement(temaZfElement)
-      showElement(prioritetElement)
-      showElement(photoElement)
-      fadeIn(temaZElement)
-      fadeIn(temaZfElement)
-      fadeIn(prioritetElement)
-      fadeIn(photoElement)
-    } else {
+  //   }
+  // }
+  //   function showCategory3() {
+  //     const routeSelect = document.getElementById('route');
+  //     const katTpSelect = document.getElementById('kat_tp');
+  //     const katAhoSelect = document.getElementById("kat_aho")
+  //     const kat1cSelect = document.getElementById("kat_1c");
+  //     const dei1cSelect= document.getElementById("dei_1c");
+  //     const nomerSelect = document.getElementById("nomer");
+  //     const temaZSelect = document.getElementById("tema_z");
+  //     const temaZfSelect = document.getElementById("tema_zf");
+  //     const prioritetSelect = document.getElementById("prioritet");
+  //     const poNameSelect = document.getElementById("po_name");
+  //     const rec1cSelect = document.getElementById("rec_1c");
+  //     const photoSelect=document.getElementById("photo")
+  //     let close1 = document.getElementById('btn')
+  //     var routeElement = document.getElementById("route");
+  //     var katTpElement = document.getElementById("kat_tp");
+  //     var katAhoElement = document.getElementById("kat_aho")
+  //     var kat1cElement = document.getElementById("kat_1c");
+  //     var dei1cElement = document.getElementById("dei_1c");
+  //     var nomerElement = document.getElementById("nomer");
+  //     var temaZElement = document.getElementById("tema_z");
+  //     var temaZfElement = document.getElementById("tema_zf");
+  //     var prioritetElement = document.getElementById("prioritet");
+  //     var poNameElement = document.getElementById("po_name");
+  //     var rec1cElement = document.getElementById("rec_1c");
+  //     var photoElement=document.getElementById("photo")
+  //     var buttElement=document.getElementById("btn")
+  //   if (katAhoSelect.value !== "") {
 
-      refresh()
-    }
-  }
+  //     showElement(temaZElement)
+  //     showElement(temaZfElement)
+  //     showElement(prioritetElement)
+  //     showElement(photoElement)
+  //     fadeIn(temaZElement)
+  //     fadeIn(temaZfElement)
+  //     fadeIn(prioritetElement)
+  //     fadeIn(photoElement)
+  //   } else {
+
+  //     refresh()
+  //   }
+  // }
 
 
     </script>
