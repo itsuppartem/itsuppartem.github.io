@@ -45,14 +45,14 @@
       <option value="Входная группа">Входная группа</option>
       <option value="Торговое оборудование">Торговое оборудование</option>
       <option value="Прочее">Прочее</option>
-    </select>
-    <select id="kat_1c" style="display: none;">
+    </select> 
+    <select id="kat_onec" style="display: none;" onchange="showCategory4()">
       <option value="">Выберите категорию 1С</option>
       <option value="Розница">Розница</option>
       <option value="УТ">УТ</option>
       <option value="Прочее">Прочее</option>
     </select>
-    <select id="dei_1c" style="display: none;">
+    <select id="dei_onec" style="display: none;">
       <option value="">Какого вида действие?</option>
       <option value="Редактировать">Редактировать</option>
       <option value="Указать на ошибку">Указать на ошибку</option>
@@ -213,8 +213,8 @@ function showElement(element) {
   const routeSelect = document.getElementById('route');
       const katTpSelect = document.getElementById('kat_tp');
       const katAhoSelect = document.getElementById("kat_aho");
-      const kat1cSelect = document.getElementById("kat_1c");
-      const dei1cSelect= document.getElementById("dei_1c");
+      const kat1cSelect = document.getElementById("kat_onec");
+      const dei1cSelect= document.getElementById("dei_onec");
       const nomerSelect = document.getElementById("nomer");
       const temaZSelect = document.getElementById("tema_z");
       const temaZfSelect = document.getElementById("tema_zf");
@@ -226,8 +226,8 @@ function showElement(element) {
       var routeElement = document.getElementById("route");
       var katTpElement = document.getElementById("kat_tp");
       var katAhoElement = document.getElementById("kat_aho");
-      var kat1cElement = document.getElementById("kat_1c");
-      var dei1cElement = document.getElementById("dei_1c");
+      var kat1cElement = document.getElementById("kat_onec");
+      var dei1cElement = document.getElementById("dei_onec");
       var nomerElement = document.getElementById("nomer");
       var temaZElement = document.getElementById("tema_z");
       var temaZfElement = document.getElementById("tema_zf");
@@ -324,6 +324,24 @@ function showElement(element) {
       refresh()
     }
   }
+
+  function showCategory4() {
+
+if (kat1cSelect.value !== "") {
+
+  showElement(temaZElement)
+  showElement(temaZfElement)
+  showElement(prioritetElement)
+  showElement(photoElement)
+  fadeIn(temaZElement)
+  fadeIn(temaZfElement)
+  fadeIn(prioritetElement)
+  fadeIn(photoElement)
+} else {
+
+  refresh()
+}
+}
 
 
     </script>
