@@ -100,6 +100,7 @@
 // Получаем все необходимые элементы
 var routeElement = document.getElementById("route");
 var katTpElement = document.getElementById("kat_tp");
+var katAhoElement = document.getElementById("kat_aho")
 var kat1cElement = document.getElementById("kat_1c");
 var dei1cElement = document.getElementById("dei_1c");
 var nomerElement = document.getElementById("nomer");
@@ -112,6 +113,7 @@ var rec1cElement = document.getElementById("rec_1c");
 // Скрываем все элементы, кроме route
 hideElement(katTpElement);
 hideElement(kat1cElement);
+hideElement(katAholement);
 hideElement(dei1cElement);
 hideElement(nomerElement);
 hideElement(temaZElement);
@@ -127,6 +129,7 @@ routeElement.addEventListener("change", function() {
   // Скрываем все элементы
   hideElement(katTpElement);
   hideElement(kat1cElement);
+  hideElement(katAhoElement);
   hideElement(dei1cElement);
   hideElement(nomerElement);
   hideElement(temaZElement);
@@ -162,27 +165,7 @@ function showElement(element) {
   element.style.display = "block";
 }
 
-    function hideAllElements() {
-      document.getElementById("kat_tp").style.display = "none";
-      document.getElementById("kat_aho").style.display = "none";
-      document.getElementById("kat_1c").style.display = "none";
-      document.getElementById("dei_1c").style.display = "none";
-      document.getElementById("vid_doka_redact").style.display = "none";
-      document.getElementById("vid_doka_sozdat").style.display = "none";
-      document.getElementById("prioritet").style.display = "none";
-      document.getElementById("tema_z").style.display = "none";
-      document.getElementById("nomer").style.display = "none";
-      document.getElementById("po_name").style.display = "none";
-      document.getElementById("rec_1c").style.display = "none";
-      document.getElementById("tema_zf").style.display = "none";
-      
-      // Сбрасываем значения полей
-      document.getElementById("tema_z").value = "";
-      document.getElementById("nomer").value = "";
-      document.getElementById("po_name").value = "";
-      document.getElementById("rec_1c").value = "";
-      document.getElementById("tema_zf").value = "";
-    }
+
 
       // close1.addEventListener('click', () => {
       //   let route = document.getElementById("route").value;
