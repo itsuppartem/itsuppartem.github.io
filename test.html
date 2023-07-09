@@ -423,8 +423,37 @@ if (dei1cSelect.value === "Редактировать") {
   fadeOut(rec1cElement)
 }
 }
+function checkForm() {
+  var form = document.querySelector('form'); // Замените 'form' на селектор вашей формы
 
+  var elements = form.querySelectorAll('[style="display: block;"]');
+  var isEmpty = false;
 
+  for (var i = 0; i < elements.length; i++) {
+    var element = elements[i];
+
+    if (element.value.trim() === '') {
+      isEmpty = true;
+      break;
+    }
+  }
+
+  if (isEmpty) {
+    alert('Пожалуйста, заполните все поля.');
+  } else {
+    alert('Все поля заполнены.');
+  }
+}
+function showCategory6() {
+
+if (prioritetSelect.value !== "") {
+
+  checkForm()
+
+} else {
+  
+}
+  }
     </script>
     <!-- <script>let tg = window.Telegram.WebApp; //получаем объект webapp телеграма 
         let usercard = document.getElementById("usercard"); //получаем блок usercard 
