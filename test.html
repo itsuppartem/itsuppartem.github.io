@@ -240,12 +240,13 @@ function showElement(element) {
  
 
     if (routeSelect.value === "ТП") {
-      
+      refresh();
       showElement(katTpElement);
       hideElement(katAhoElement);
       fadeIn(katTpElement);
       fadeOut(katAhoElement);
-    } else if (routeSelect.value === "АХО") {
+    } else if (routeSelect.value === "АХО")
+     {refresh();
       hideElement(katTpElement);
       showElement(katAhoElement);
       fadeIn(katAhoElement);
@@ -262,11 +263,13 @@ function showElement(element) {
   function showCategory2() {
 
 
-    if (katTpSelect.value === "1C") {
+    if (katTpSelect.value === "1C")
+     {
+      refresh();
       showElement(kat1cElement);
       fadeIn(kat1cElement);
     } else if (katTpSelect.value ==="Программное обеспечение"){
-
+      refresh();
       showElement(temaZElement);
       showElement(poNameElement);
       showElement(temaZfElement);
@@ -279,7 +282,7 @@ function showElement(element) {
       fadeIn(photoElement);
     } else if (katTpSelect.value ==="Оборудование"){
 
-
+      refresh();
       showElement(temaZElement);
       showElement(temaZfElement);
       showElement(prioritetElement);
@@ -289,7 +292,7 @@ function showElement(element) {
       fadeIn(prioritetElement);
       fadeIn(photoElement);
     } else if (katTpSelect.value ==="Интернет"){
-
+      refresh();
       showElement(temaZElement);
       temaZElement.value="Проблемы с интернетом";
       showElement(temaZfElement);
@@ -304,48 +307,23 @@ function showElement(element) {
 
     }
   }
-  //   function showCategory3() {
-  //     const routeSelect = document.getElementById('route');
-  //     const katTpSelect = document.getElementById('kat_tp');
-  //     const katAhoSelect = document.getElementById("kat_aho")
-  //     const kat1cSelect = document.getElementById("kat_1c");
-  //     const dei1cSelect= document.getElementById("dei_1c");
-  //     const nomerSelect = document.getElementById("nomer");
-  //     const temaZSelect = document.getElementById("tema_z");
-  //     const temaZfSelect = document.getElementById("tema_zf");
-  //     const prioritetSelect = document.getElementById("prioritet");
-  //     const poNameSelect = document.getElementById("po_name");
-  //     const rec1cSelect = document.getElementById("rec_1c");
-  //     const photoSelect=document.getElementById("photo")
-  //     let close1 = document.getElementById('btn')
-  //     var routeElement = document.getElementById("route");
-  //     var katTpElement = document.getElementById("kat_tp");
-  //     var katAhoElement = document.getElementById("kat_aho")
-  //     var kat1cElement = document.getElementById("kat_1c");
-  //     var dei1cElement = document.getElementById("dei_1c");
-  //     var nomerElement = document.getElementById("nomer");
-  //     var temaZElement = document.getElementById("tema_z");
-  //     var temaZfElement = document.getElementById("tema_zf");
-  //     var prioritetElement = document.getElementById("prioritet");
-  //     var poNameElement = document.getElementById("po_name");
-  //     var rec1cElement = document.getElementById("rec_1c");
-  //     var photoElement=document.getElementById("photo")
-  //     var buttElement=document.getElementById("btn")
-  //   if (katAhoSelect.value !== "") {
+    function showCategory3() {
 
-  //     showElement(temaZElement)
-  //     showElement(temaZfElement)
-  //     showElement(prioritetElement)
-  //     showElement(photoElement)
-  //     fadeIn(temaZElement)
-  //     fadeIn(temaZfElement)
-  //     fadeIn(prioritetElement)
-  //     fadeIn(photoElement)
-  //   } else {
+    if (katAhoSelect.value !== "") {
 
-  //     refresh()
-  //   }
-  // }
+      showElement(temaZElement)
+      showElement(temaZfElement)
+      showElement(prioritetElement)
+      showElement(photoElement)
+      fadeIn(temaZElement)
+      fadeIn(temaZfElement)
+      fadeIn(prioritetElement)
+      fadeIn(photoElement)
+    } else {
+
+      refresh()
+    }
+  }
 
 
     </script>
