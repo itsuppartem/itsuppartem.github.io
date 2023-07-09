@@ -32,14 +32,14 @@
       <option value="ТП">ТП</option>
       <option value="АХО">АХО</option>
     </select>
-    <select id="kat_tp" style="display: none;" onchange="showCategory()">
+    <select id="kat_tp" style="display: none;" onchange="showCategory2()">
       <option value="">Выберите категорию ТП</option>
       <option value="1С">1С</option>
       <option value="Программное обеспечение">Программное обеспечение</option>
       <option value="Оборудование">Оборудование</option>
       <option value="Интернет">Интернет</option>
     </select>
-    <select id="kat_aho" style="display: none;" onchange="showCategory()">
+    <select id="kat_aho" style="display: none;" onchange="showCategory3()">
       <option value="">Выберите категорию АХО</option>
       <option value="Охрана">Охрана</option>
       <option value="Входная группа">Входная группа</option>
@@ -258,6 +258,24 @@ function showElement(element) {
       fadeOut(katAhoElement);
       fadeOut(katTpElement);
     }
+
+  }
+  function showCategory2() {
+      
+      var routeElement = document.getElementById("route");
+      var katTpElement = document.getElementById("kat_tp");
+      var katAhoElement = document.getElementById("kat_aho")
+      var kat1cElement = document.getElementById("kat_1c");
+      var dei1cElement = document.getElementById("dei_1c");
+      var nomerElement = document.getElementById("nomer");
+      var temaZElement = document.getElementById("tema_z");
+      var temaZfElement = document.getElementById("tema_zf");
+      var prioritetElement = document.getElementById("prioritet");
+      var poNameElement = document.getElementById("po_name");
+      var rec1cElement = document.getElementById("rec_1c");
+      var photoElement=document.getElementById("photo")
+      var buttElement=document.getElementById("btn")
+
     if (katTpSelect.value === "1C") {
       refresh()
       showElement(kat1cElement)
@@ -332,9 +350,25 @@ function showElement(element) {
       fadeIn(prioritetElement)
       fadeIn(photoElement)
     } else {
-
+      refresh()
 
     }
+  }
+    function showCategory3() {
+      
+      var routeElement = document.getElementById("route");
+      var katTpElement = document.getElementById("kat_tp");
+      var katAhoElement = document.getElementById("kat_aho")
+      var kat1cElement = document.getElementById("kat_1c");
+      var dei1cElement = document.getElementById("dei_1c");
+      var nomerElement = document.getElementById("nomer");
+      var temaZElement = document.getElementById("tema_z");
+      var temaZfElement = document.getElementById("tema_zf");
+      var prioritetElement = document.getElementById("prioritet");
+      var poNameElement = document.getElementById("po_name");
+      var rec1cElement = document.getElementById("rec_1c");
+      var photoElement=document.getElementById("photo")
+      var buttElement=document.getElementById("btn")
     if (katAhoSelect.value !== "") {
       // hideElement(temaZElement)
       // hideElement(poNameElement)
@@ -358,7 +392,7 @@ function showElement(element) {
       fadeIn(prioritetElement)
       fadeIn(photoElement)
     } else {
-
+    refresh()
 
     }
   }
