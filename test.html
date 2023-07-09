@@ -91,84 +91,6 @@
     <button id="btn">Поставить задачу</button> 
   </form>
     <script>
-
-      let tg = window.Telegram.WebApp;
-      tg.expand();
-      const routeSelect = document.getElementById('route');
-      const katTpSelect = document.getElementById('kat_tp');
-      let close1 = document.getElementById('btn')
-      
-
-      close1.addEventListener('click', () => {
-        let route = document.getElementById("route").value;
-        let kat_tp = document.getElementById("kat_tp").value;
-        let kat_aho = document.getElementById("kat_aho").value;
-
-        let data = {
-          route: route
-        };
-
-        if (kat_tp !== "") {
-          data.kat_tp = kat_tp;
-        }
-
-        if (kat_aho !== "") {
-          data.kat_aho = kat_aho;
-        }
-
-        tg.sendData(JSON.stringify(data));
-        tg.close();
-      });
-
-      function fadeIn(element) {
-    var op = 0.1; // начальная прозрачность
-    element.style.opacity = op;
-    element.style.display = "block";
-
-    var timer = setInterval(function () {
-      if (op >= 1) {
-        clearInterval(timer);
-      }
-      element.style.opacity = op;
-      op += op * 0.1;
-    }, 10);
-  }
-
-  function fadeOut(element) {
-    var op = 1; // начальная прозрачность
-
-    var timer = setInterval(function () {
-      if (op <= 0.1) {
-        clearInterval(timer);
-        element.style.display = "none";
-      }
-      element.style.opacity = op;
-      op -= op * 0.1;
-    }, 10);
-  }
-  //     function showCategory() {
-  //       var routeSelect = document.getElementById("route");
-  //   var tpSelect = document.getElementById("kat_tp");
-  //   var ahoSelect = document.getElementById("kat_aho");
-
-  //   if (routeSelect.value === "ТП") {
-  //     tpSelect.style.display = "block";
-  //     ahoSelect.style.display = "none";
-  //     fadeIn(tpSelect);
-  //     fadeOut(ahoSelect);
-  //   } else if (routeSelect.value === "АХО") {
-  //     tpSelect.style.display = "none";
-  //     ahoSelect.style.display = "block";
-  //     fadeIn(ahoSelect);
-  //     fadeOut(tpSelect);
-  //   } else {
-  //     tpSelect.style.display = "none";
-  //     ahoSelect.style.display = "none";
-  //     fadeOut(tpSelect);
-  //     fadeOut(ahoSelect);
-  //   }
-  // }
-
   function showCategory() {
   // Скрываем все элементы, кроме route
   hideAllElements();
@@ -252,6 +174,84 @@ function hideAllElements() {
   document.getElementById("rec_1c").value = "";
   document.getElementById("tema_zf").value = "";
 }
+      let tg = window.Telegram.WebApp;
+      tg.expand();
+      const routeSelect = document.getElementById('route');
+      const katTpSelect = document.getElementById('kat_tp');
+      let close1 = document.getElementById('btn')
+      
+
+      close1.addEventListener('click', () => {
+        let route = document.getElementById("route").value;
+        let kat_tp = document.getElementById("kat_tp").value;
+        let kat_aho = document.getElementById("kat_aho").value;
+
+        let data = {
+          route: route
+        };
+
+        if (kat_tp !== "") {
+          data.kat_tp = kat_tp;
+        }
+
+        if (kat_aho !== "") {
+          data.kat_aho = kat_aho;
+        }
+
+        tg.sendData(JSON.stringify(data));
+        tg.close();
+      });
+
+      function fadeIn(element) {
+    var op = 0.1; // начальная прозрачность
+    element.style.opacity = op;
+    element.style.display = "block";
+
+    var timer = setInterval(function () {
+      if (op >= 1) {
+        clearInterval(timer);
+      }
+      element.style.opacity = op;
+      op += op * 0.1;
+    }, 10);
+  }
+
+  function fadeOut(element) {
+    var op = 1; // начальная прозрачность
+
+    var timer = setInterval(function () {
+      if (op <= 0.1) {
+        clearInterval(timer);
+        element.style.display = "none";
+      }
+      element.style.opacity = op;
+      op -= op * 0.1;
+    }, 10);
+  }
+  //     function showCategory() {
+  //       var routeSelect = document.getElementById("route");
+  //   var tpSelect = document.getElementById("kat_tp");
+  //   var ahoSelect = document.getElementById("kat_aho");
+
+  //   if (routeSelect.value === "ТП") {
+  //     tpSelect.style.display = "block";
+  //     ahoSelect.style.display = "none";
+  //     fadeIn(tpSelect);
+  //     fadeOut(ahoSelect);
+  //   } else if (routeSelect.value === "АХО") {
+  //     tpSelect.style.display = "none";
+  //     ahoSelect.style.display = "block";
+  //     fadeIn(ahoSelect);
+  //     fadeOut(tpSelect);
+  //   } else {
+  //     tpSelect.style.display = "none";
+  //     ahoSelect.style.display = "none";
+  //     fadeOut(tpSelect);
+  //     fadeOut(ahoSelect);
+  //   }
+  // }
+
+
     </script>
     <!-- <script>let tg = window.Telegram.WebApp; //получаем объект webapp телеграма 
         let usercard = document.getElementById("usercard"); //получаем блок usercard 
