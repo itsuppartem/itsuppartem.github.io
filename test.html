@@ -377,9 +377,9 @@ function checkForm() {
   }
 
   if (isEmpty) {
-    alert('Пожалуйста, заполните все поля.');
+    return false;
   } else {
-    alert('Все поля заполнены.');
+    return true;
   }
 }
 function showCategory6() {
@@ -398,63 +398,70 @@ if (prioritetSelect.value !== "") {
 
       close1.addEventListener('click', () => {
 
-        checkForm();
-        let route = document.getElementById("route").value;
-        let kat_tp = document.getElementById("kat_tp").value;
-        let kat_aho = document.getElementById("kat_aho").value;
-        let kat_1c=document.getElementById("kat_onec").value;
-        let dei_onec=document.getElementById("dei_onec").value;
-        let nomer=document.getElementById("nomer").value;
-        let tema_z=document.getElementById("tema_z").value;
-        let tema_zf=document.getElementById("tema_zf").value;
-        let prioritet=document.getElementById("prioritet").value;
-        let po_name=document.getElementById("po_name").value;
-        let rec_onec=document.getElementById("rec_onec").value;
-        let vid_doka=document.getElementById("vid_doka").value;
+        var isFormValid = checkForm();
 
-        let data = {
-          route: route
-        };
+        if (isFormValid) {
+              let route = document.getElementById("route").value;
+              let kat_tp = document.getElementById("kat_tp").value;
+              let kat_aho = document.getElementById("kat_aho").value;
+              let kat_1c=document.getElementById("kat_onec").value;
+              let dei_onec=document.getElementById("dei_onec").value;
+              let nomer=document.getElementById("nomer").value;
+              let tema_z=document.getElementById("tema_z").value;
+              let tema_zf=document.getElementById("tema_zf").value;
+              let prioritet=document.getElementById("prioritet").value;
+              let po_name=document.getElementById("po_name").value;
+              let rec_onec=document.getElementById("rec_onec").value;
+              let vid_doka=document.getElementById("vid_doka").value;
 
-        if (kat_tp !== "") {
-          data.kat_tp = kat_tp;
-        }
+              let data = {
+                route: route
+              };
 
-        if (kat_aho !== "") {
-          data.kat_aho = kat_aho;
-        }
-        if (kat_1c !== "") {
-          data.kat_1c = kat_1c;
-        }
-        if (dei_onec !== "") {
-          data.dei_onec = dei_onec;
-        }
-        if (nomer !== "") {
-          data.nomer = nomer;
-        }
-        if (tema_z !== "") {
-          data.tema_z = tema_z;
-        }
-        if (tema_zf !== "") {
-          data.tema_zf = tema_zf;
-        }
-        if (prioritet !== "") {
-          data.prioritet = prioritet;
-        }
-        if (po_name !== "") {
-          data.po_name = po_name;
-        }
-        if (rec_onec !== "") {
-          data.rec_onec = rec_onec;
-        }
-        if (po_name !== "") {
-          data.vid_doka = vid_doka;
-        }
+              if (kat_tp !== "") {
+                data.kat_tp = kat_tp;
+              }
+
+              if (kat_aho !== "") {
+                data.kat_aho = kat_aho;
+              }
+              if (kat_1c !== "") {
+                data.kat_1c = kat_1c;
+              }
+              if (dei_onec !== "") {
+                data.dei_onec = dei_onec;
+              }
+              if (nomer !== "") {
+                data.nomer = nomer;
+              }
+              if (tema_z !== "") {
+                data.tema_z = tema_z;
+              }
+              if (tema_zf !== "") {
+                data.tema_zf = tema_zf;
+              }
+              if (prioritet !== "") {
+                data.prioritet = prioritet;
+              }
+              if (po_name !== "") {
+                data.po_name = po_name;
+              }
+              if (rec_onec !== "") {
+                data.rec_onec = rec_onec;
+              }
+              if (po_name !== "") {
+                data.vid_doka = vid_doka;
+              }
 
 
 
-        tg.sendData(JSON.stringify(data));
-        tg.close();
+              tg.sendData(JSON.stringify(data));
+              tg.close();
+        } else {
+          alert('Пожалуйста, заполните все поля.');
+        }
+          
+        
       });
     </script>
 
