@@ -72,6 +72,14 @@
       <option value="Заказ покупателя">Заказ покупателя</option>
       <option value="Прочее">Прочее</option>
     </select>
+    
+    <div id="error"></div>
+    <input type="text" id="tema_z" placeholder="Тема задачи(кратко)"style="display: none;">
+    <input type="text" id="tema_zf" placeholder="Суть задачи(развернуто)"style="display: none;">
+    <input type="text" id="nomer" placeholder="Номер документа"style="display: none;">
+    <input type="text" id="po_name" placeholder="Название программы"style="display: none;">
+    <input type="text" id="rec_1c" placeholder="Опишите реквизиты документа"style="display: none;">
+   
     <select id="prioritet" style="display: none;">
       <option value="">Приоритет?</option>
       <option value="Улучшение работы">Улучшение работы</option>
@@ -80,12 +88,6 @@
       <option value="Высокий">Высокий</option>
       <option value="Критический">Критический</option>
     </select>
-    <div id="error"></div>
-    <input type="text" id="tema_z" placeholder="Тема задачи(кратко)"style="display: none;">
-    <input type="text" id="nomer" placeholder="Номер документа"style="display: none;">
-    <input type="text" id="po_name" placeholder="Название программы"style="display: none;">
-    <input type="text" id="rec_1c" placeholder="Опишите реквизиты документа"style="display: none;">
-    <input type="text" id="tema_zf" placeholder="Суть задачи(развернуто)"style="display: none;">
     <input type="file" id="photo" name="photo" style="display : none">
     <button id="btn" style="display: none;">Поставить задачу</button> 
   </form>
@@ -240,9 +242,21 @@ function showElement(element) {
       fadeOut(katTpElement);
     }
     if (katTpSelect.value === "1C") {
+      hideElement(temaZElement)
+      hideElement(poNameElement)
+      hideElement(kat1cElement)
+      hideElement(temaZfElement)
+      hideElement(prioritetElement)
+      hideElement(photoElement)
       showElement(kat1cElement)
       fadeIn(kat1cElement);
     } else if (katTpSelect.value ==="Программное обеспечение"){
+      hideElement(temaZElement)
+      hideElement(poNameElement)
+      hideElement(kat1cElement)
+      hideElement(temaZfElement)
+      hideElement(prioritetElement)
+      hideElement(photoElement)
       showElement(temaZElement)
       showElement(poNameElement)
       showElement(temaZfElement)
@@ -254,6 +268,12 @@ function showElement(element) {
       fadeIn(prioritetElement)
       fadeIn(photoElement)
     } else if (katTpSelect.value ==="Оборудование"){
+      hideElement(temaZElement)
+      hideElement(poNameElement)
+      hideElement(kat1cElement)
+      hideElement(temaZfElement)
+      hideElement(prioritetElement)
+      hideElement(photoElement)
       showElement(temaZElement)
       showElement(temaZfElement)
       showElement(prioritetElement)
@@ -263,6 +283,12 @@ function showElement(element) {
       fadeIn(prioritetElement)
       fadeIn(photoElement)
     } else if (katTpSelect.value ==="Интернет"){
+      hideElement(temaZElement)
+      hideElement(poNameElement)
+      hideElement(kat1cElement)
+      hideElement(temaZfElement)
+      hideElement(prioritetElement)
+      hideElement(photoElement)
       showElement(temaZElement)
       temaZElement.value="Проблемы с интернетом"
       showElement(temaZfElement)
